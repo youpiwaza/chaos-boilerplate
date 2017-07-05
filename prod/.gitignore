@@ -13,6 +13,14 @@ bower_components
 .npm
 package-lock.json
 
-# builds
-prod
+
+# Chaos
+## builds
+build/
+
+## Debug
+css-unminified/
+
+## tests
 tests/pugjs/html
+tests/sass/style.css
