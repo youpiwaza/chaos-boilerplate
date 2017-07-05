@@ -1,0 +1,9 @@
+/* TEAM */
+Author: Maxime Chevasson
+Email: masamune.code@gmail.com
+
+/* SITE */
+Source: :x
+
+/* LIBRARIES */
+cf. package.json
