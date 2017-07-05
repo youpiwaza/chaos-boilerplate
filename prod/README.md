@@ -65,11 +65,13 @@ Nah / ✘
 
 divers
 - google analytics							☐
-- recup bases mah-skeleton 					☐
-- recup bases chaos		 					☐
+- recup bases mah-skeleton 					✅
+- recup bases chaos		 					✅
+- page toolbox								❤
+- revoir indentation tous (tab 4)			❤
 
 gulp
-- live reload								☐
+- live reload								❤
 
 js
 - basic js files							☐
@@ -77,11 +79,12 @@ js
 - uglyfier									☐
 
 sass
-- bourbon & co								☐
+- bourbon & co								❤
 - breakpoints								☐
 - choix font sizes (voir bourbon ?)			☐
 - normalize (ci besoin ek bourbon)			☐
 - mixins									☐
+- créer variables de bases (fonts, etc.)	☐
 
 
 
