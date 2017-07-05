@@ -1,13 +1,16 @@
 //// Requires
 
-var gulp 			= require('gulp'),
-	prefix 			= require('gulp-autoprefixer'),
-	minifycss 		= require('gulp-minify-css'),
-	notify 			= require('gulp-notify'),
-	plumber			= require('gulp-plumber'),
-	pug 			= require('gulp-pug'),
-	sass 			= require('gulp-sass'),
-	util 			= require('gulp-util');
+var gulp 					= require('gulp'),
+	prefix 					= require('gulp-autoprefixer'),
+	cache 					= require('gulp-cached'),
+	minifycss 				= require('gulp-minify-css'),
+	notify 					= require('gulp-notify'),
+	plumber					= require('gulp-plumber'),
+	pug 					= require('gulp-pug'),
+	sass 					= require('gulp-sass'),
+	sassPartialsImported 	= require('gulp-sass-partials-imported');
+	util 					= require('gulp-util'),
+
 
 
 
@@ -71,6 +74,9 @@ gulp.task('html', function(){
 	        }
 	    }))
 
+		// caching to fasten watch
+	    .pipe(cache('htmling'))
+
 		.pipe(pug())
 		.pipe(gulp.dest(paths.pug.dest));
 });
@@ -79,48 +85,61 @@ gulp.task('html', function(){
 // Sass compilation
 gulp.task('sass', function (){
 	// Taking the path from the above object
-	gulp.src(paths.styles.files)
+	return gulp.src(paths.styles.files)
 	
-	// prevent watch crash on error
-	.pipe(plumber({
-		errorHandler: function(err) {
-            notify.onError({
-                title: "Gulp error in " + err.plugin,
-                // message:  err.toString()
-                message:  err.message
-            })(err);
-        },
-        handleError: function (err) {
-            console.log(err);
-            this.emit('end');
-        }
-    }))
+		// prevent watch crash on error
+		.pipe(plumber({
+			errorHandler: function(err) {
+	            notify.onError({
+	                title: "Gulp error in " + err.plugin,
+	                // message:  err.toString()
+	                message:  err.message
+	            })(err);
+	        },
+	        handleError: function (err) {
+	            console.log(err);
+	            this.emit('end');
+	        }
+	    }))
 
-	// Sass options - make the output expanded and add the source map
-	// Also pull the include path from the paths object
-	.pipe(sass({
-		outputStyle: 'expanded',
-		sourceComments: 'map',
-		includePaths : [paths.styles.src]
-	}))
-	// If there is an error, don't stop compiling but use the custom displayError function
-	
-	// Pass the compiled sass through the prefixer with defined 
-	.pipe(prefix(
-		'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'
-	))
-	// Un compressed css version for debug purposes
-	.pipe(gulp.dest(paths.styles.destDev))
-	.pipe(minifycss())
-	// Funally put the compiled sass into a css file
-	.pipe(gulp.dest(paths.styles.dest))
+	    // caching to fasten watch
+	    .pipe(cache('sassing'))
+
+	    // during watch, force recompile of un modified scss files that imports modified sass files
+	    // allow sass watch with cache
+	    .pipe(sassPartialsImported(paths.styles.src))
+
+		// Sass options - make the output expanded and add the source map
+		// Also pull the include path from the paths object
+		.pipe(sass({
+			outputStyle: 'expanded',
+			sourceComments: 'map',
+			includePaths : [paths.styles.src]
+		}))
+		// If there is an error, don't stop compiling but use the custom displayError function
+		
+		// Pass the compiled sass through the prefixer with defined 
+		.pipe(prefix(
+			'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'
+		))
+		// Un compressed css version for debug purposes
+		.pipe(gulp.dest(paths.styles.destDev))
+		.pipe(minifycss())
+		// Funally put the compiled sass into a css file
+		.pipe(gulp.dest(paths.styles.dest))
 });
 
 
 //// Commands
 gulp.task('default', [ 'copy-assets', 'html', 'sass' ]);
 gulp.task('devBuild', [ 'html', 'sass' ]);
-gulp.task('watch', ['devBuild'], function () {  
+gulp.task('watch', ['devBuild'], watch);
+
+
+//// Functions
+
+// dedicated function for wath task
+function watch() {  
 	gulp.watch(
 		[	
 			// paths.watch.scripts,
@@ -133,10 +152,7 @@ gulp.task('watch', ['devBuild'], function () {
 			'html'
 		]
 	);
-});
-
-
-//// Functions
+}
 
 
 
