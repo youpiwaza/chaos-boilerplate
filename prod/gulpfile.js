@@ -1,10 +1,10 @@
 //// Requires
 
-var gulp 			= require('gulp');
-var prefix 			= require('gulp-autoprefixer');
-var minifycss 		= require('gulp-minify-css');
-var pug 			= require('gulp-pug');
-var sass 			= require('gulp-sass');
+var gulp 			= require('gulp'),
+	prefix 			= require('gulp-autoprefixer'),
+	minifycss 		= require('gulp-minify-css'),
+	pug 			= require('gulp-pug'),
+	sass 			= require('gulp-sass');
 
 
 
