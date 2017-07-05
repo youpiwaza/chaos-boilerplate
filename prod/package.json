@@ -1,0 +1,23 @@
+{
+  "name": "dark-eldar-blog",
+  "version": "1.0.0",
+  "description": "Blog relating warhammer 40.000 stuff, mainly Dark eldar / Drukhari amry photo, alternative color scheme (white)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dark",
+    "eldar",
+    "drukhari",
+    "white",
+    "alternative",
+    "color",
+    "scheme",
+    "warhammer",
+    "40000",
+    "40.000"
+  ],
+  "author": "Masamune / Maxime Chevasson",
+  "license": "MIT"
+}
