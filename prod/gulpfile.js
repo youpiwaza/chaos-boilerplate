@@ -94,8 +94,15 @@ var displayError = function(error) {
 
 /// Vars
 
+/// tests ressources paths & dest
 var testPaths = {
-	// Sass paths
+	// html
+	pug: {
+		src: 'tests/pugjs/templates/*.pug',
+		dest: 'tests/pugjs/html/'
+	},
+
+	// sass
     styles: {
         src: './tests/sass',
         files: './tests/sass/**/*.scss',
@@ -108,9 +115,9 @@ var testPaths = {
 
 // Pugjs tests compilation
 gulp.task('html-test', function(){
-  return gulp.src('tests/pugjs/templates/*.pug')
+  return gulp.src(testPaths.pug.src)
     .pipe(pug())
-    .pipe(gulp.dest('tests/pugjs/html/'))
+    .pipe(gulp.dest(testPaths.pug.dest))
 });
 
 // Sass compilation
