@@ -9,8 +9,15 @@ var gulp 			= require('gulp'),
 
 
 //// Vars
+/// ressources paths & dest
 var paths = {
-	// Sass paths
+	// html
+	pug: {
+		src: 'src/*.pug',
+		dest: 'build/'
+	},
+
+	// sass
     styles: {
         src: './src/styles',
         files: './src/styles/**/*.scss',
@@ -25,9 +32,9 @@ var paths = {
 
 /// Pugjs html templates compilation
 gulp.task('html', function(){
-  return gulp.src('src/templates/*.pug')
+  return gulp.src(paths.pug.src)
     .pipe(pug())
-    .pipe(gulp.dest('build/html'))
+    .pipe(gulp.dest(paths.pug.dest))
 });
 
 
