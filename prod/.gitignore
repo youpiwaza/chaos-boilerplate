@@ -16,7 +16,8 @@ package-lock.json
 
 # Chaos
 ## builds
-build/
+*.html
+*.css
 
 ## Debug
 css-unminified/
