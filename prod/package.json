@@ -19,5 +19,8 @@
     "40.000"
   ],
   "author": "Masamune / Maxime Chevasson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
