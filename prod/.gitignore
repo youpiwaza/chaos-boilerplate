@@ -3,8 +3,16 @@ logs
 *.log
 npm-debug.log*
 
-# Dependency directories
-node_modules/
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+/node_modules
+
+## OS generated files
+.DS_Store?
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
 
 # Bower dependency directory (https://bower.io/)
 bower_components
@@ -14,8 +22,47 @@ bower_components
 package-lock.json
 
 
+## IDE's
+.idea
+.projects
+.netbeans
+.metadata
+.project
+.settings
+.svn
+
+# helpers
+*.patch
+.phpstorm.meta.php
+*.phpstorm.meta.php
+/nbproject
+/nbproject/private/
+
+# sublime
+*.sublime-project
+*.sublime-workspace
+
+#editor old files(emacs,jed)
+*~
+
+
+## Archives
+*.tar.gz
+*.tar.bz2
+*.gz
+*.zip
+*.bz2
+*.rar
+
+
+## Sql dumps
+*.sql
+/dumps/
+
+
+
 # Chaos
-## builds
+## Compiled/bundled files
 *.html
 *.css
 
