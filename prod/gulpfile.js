@@ -3,6 +3,8 @@
 var gulp 			= require('gulp'),
 	prefix 			= require('gulp-autoprefixer'),
 	minifycss 		= require('gulp-minify-css'),
+	notify 			= require('gulp-notify'),
+	plumber			= require('gulp-plumber'),
 	pug 			= require('gulp-pug'),
 	sass 			= require('gulp-sass'),
 	util 			= require('gulp-util');
@@ -30,6 +32,13 @@ var paths = {
 		files: './src/styles/**/*.scss',
 		dest: './build/styles',
 		destDev: './src/styles/css-unminified'
+	},
+
+	// watch
+	watch: {
+		scripts: 'src/scripts/**/*.js',
+		styles: 'src/styles/**/*.scss',
+		templates: 'src/**/*.pug'
 	}
 }
 
@@ -46,6 +55,22 @@ gulp.task('copy-assets', function() {
 /// Pugjs html templates compilation
 gulp.task('html', function(){
 	return gulp.src(paths.pug.src)
+
+		// prevent watch crash on error
+		.pipe(plumber({
+			errorHandler: function(err) {
+	            notify.onError({
+	                title: "Gulp error in " + err.plugin,
+	                // message:  err.toString()
+	                message:  err.message
+	            })(err);
+	        },
+	        handleError: function (err) {
+	            console.log(err);
+	            this.emit('end');
+	        }
+	    }))
+
 		.pipe(pug())
 		.pipe(gulp.dest(paths.pug.dest));
 });
@@ -55,6 +80,22 @@ gulp.task('html', function(){
 gulp.task('sass', function (){
 	// Taking the path from the above object
 	gulp.src(paths.styles.files)
+	
+	// prevent watch crash on error
+	.pipe(plumber({
+		errorHandler: function(err) {
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                // message:  err.toString()
+                message:  err.message
+            })(err);
+        },
+        handleError: function (err) {
+            console.log(err);
+            this.emit('end');
+        }
+    }))
+
 	// Sass options - make the output expanded and add the source map
 	// Also pull the include path from the paths object
 	.pipe(sass({
@@ -63,9 +104,7 @@ gulp.task('sass', function (){
 		includePaths : [paths.styles.src]
 	}))
 	// If there is an error, don't stop compiling but use the custom displayError function
-	.on('error', function(err){
-		displayError(err);
-	})
+	
 	// Pass the compiled sass through the prefixer with defined 
 	.pipe(prefix(
 		'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'
@@ -80,26 +119,25 @@ gulp.task('sass', function (){
 
 //// Commands
 gulp.task('default', [ 'copy-assets', 'html', 'sass' ]);
-
+gulp.task('devBuild', [ 'html', 'sass' ]);
+gulp.task('watch', ['devBuild'], function () {  
+	gulp.watch(
+		[	
+			// paths.watch.scripts,
+			paths.watch.styles,
+			paths.watch.templates
+		],
+		[	
+			// 'devBuild',
+			'sass',
+			'html'
+		]
+	);
+});
 
 
 //// Functions
 
-// A display error function, to format and make custom errors more uniform
-// Could be combined with gulp-util or npm colors for nicer output
-var displayError = function(error) {
-	// Initial building up of the error
-	var errorString = '[' + error.plugin + ']';
-	errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
-	// If the error contains the filename or line number add it to the string
-	if(error.fileName)
-	    errorString += ' in ' + error.fileName;
-	if(error.lineNumber)
-	    errorString += ' on line ' + error.lineNumber;
-	// This will output an error like the following:
-	// [gulp-sass] error message in file_name on line 1
-	console.error(errorString);
-}
 
 
 
