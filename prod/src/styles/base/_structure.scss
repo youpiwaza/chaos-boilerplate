@@ -1,0 +1,71 @@
+//// Main stylesheet
+
+/// Native elements
+body {
+  background-color: $color-primary;
+  color: $color-fourth;
+  font-family: 'Raleway', sans-serif;
+}
+// HX
+h1, h2, h3, h4, h5, h6 {
+  color: $color-primary;
+  font-family: 'Knewave', cursive;
+  margin-bottom: 20px;
+  text-shadow: 1px 2px $color-fourth;
+}
+
+// a & hover
+a {
+  color: darken($color-primary, 20%);
+
+  &:visited {
+    color: darken($color-primary, 20%);
+  }
+
+  &:active,
+  &:hover {
+    color: darken($color-third, 10%);
+  }
+
+  &.active {
+    color: $color-fourth;
+  }
+}
+img {
+  border: 15px solid $color-secondary;
+  border-radius: 15px;
+  margin: 20px 10px;
+}
+
+/// Simple classes
+// containers
+.myContainer {
+  background-color: #fafafa;
+  padding: 20px 30px;
+  position: relative;
+}
+
+// misc
+.code {
+  background-color: $color-fourth;
+  border-radius: 5px;
+  color: $color-secondary;
+  display: inline-block;
+  font-family: 'SourceCodePro', sans-serif;
+  margin: 10px 0;
+  padding: 15px;
+}
+.error {
+  color: $color-error;
+}
+.highlight {
+  color: $color-primary;
+}
+.logo {
+  border: none;
+  height: 100px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: auto;
+}

@@ -1,0 +1,51 @@
+@import "_variables";
+
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('#{$icomoon-font-path}/icomoon.eot?jzwyvi');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?jzwyvi#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/icomoon.ttf?jzwyvi') format('truetype'),
+        url('#{$icomoon-font-path}/icomoon.woff?jzwyvi') format('woff'),
+        url('#{$icomoon-font-path}/icomoon.svg?jzwyvi#icomoon') format('svg');
+}
+
+[class^="icon-"],
+[class*="icon-"],
+[class^="_icon"],
+[class*="_icon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconheart2 {
+  &:before {
+    content: $icon-heart2;
+  }
+}
+.iconstaro {
+  &:before {
+    content: $icon-star-o;
+  }
+}
+.iconpacman {
+  &:before {
+    content: $icon-pacman;
+  }
+}
+.iconfire {
+  &:before {
+    content: $icon-fire;
+  }
+}

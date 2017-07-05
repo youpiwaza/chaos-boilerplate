@@ -1,0 +1,10 @@
+//// Fonts imports related stylesheet
+
+@include font-face('Knewave', '../../assets/fonts/Knewave/Knewave-Regular', $exts: 'ttf');
+
+@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Bold', bold, $exts: 'ttf');
+@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-BoldItalic', bold, italic, $exts: 'ttf');
+@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Italic', null, italic, $exts: 'ttf');
+@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Regular', $exts: 'ttf');
+
+@include font-face('SourceCodePro', '../../assets/fonts/SourceCodePro/SourceCodePro-Regular', $exts: 'ttf');

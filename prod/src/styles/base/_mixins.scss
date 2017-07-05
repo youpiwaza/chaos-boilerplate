@@ -1,0 +1,33 @@
+//// Place your mixins/placeholders here
+/// Note : https://la-cascade.io/sass-mixin-ou-placeholder/
+/// Mixins if there are some variables to it, if not prefer use of placeholder
+
+/// TODO : récupérer les mixins less (+ convertir) concernant les checkboxs et autres, full custom via :after & label
+
+/// font import
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
