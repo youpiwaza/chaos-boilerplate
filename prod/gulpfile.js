@@ -1,8 +1,8 @@
 //// Requires
 
 var gulp 			= require('gulp');
-var minifycss 		= require('gulp-minify-css');
 var prefix 			= require('gulp-autoprefixer');
+var minifycss 		= require('gulp-minify-css');
 var pug 			= require('gulp-pug');
 var sass 			= require('gulp-sass');
 
