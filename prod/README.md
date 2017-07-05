@@ -63,15 +63,15 @@ Nah / ✘
 
 
 
-divers
+divers										  status / priorities
 - google analytics									☐
-- recup bases mah-skeleton 							✅
-- recup bases chaos		 							✅
-- page toolbox										❤
-- revoir indentation tous (tab 4)					❤
+- recup bases mah-skeleton 							✅ 7
+- recup bases chaos		 							✅ 6
+- page toolbox										❤ 4
+- revoir indentation tous (tab 4)					❤ 2
 
 gulp
-- live reload										❤
+- live reload										❤ 1
 -- watch + cache									✔
 
 js
@@ -80,7 +80,7 @@ js
 - uglyfier											☐
 
 sass
-- bourbon & co										❤
+- bourbon & co										❤ 5
 - breakpoints										☐
 - choix font sizes (voir bourbon ?)					☐
 - normalize (ci besoin ek bourbon)					☐
