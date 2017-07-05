@@ -6,6 +6,8 @@
 - node												/ https://nodejs.org/en/
 - npm												/ https://www.npmjs.com/
 - gulp												/ http://gulpjs.com/
+// Html templates compilation
+-- gulp-pug											/ https://www.npmjs.com/package/gulp-pug
 	
 - git												/ https://git-scm.com/
 -- github											/ https://github.com/youpiwaza
@@ -28,6 +30,11 @@
 
 
 ##### Basic commands
+
+gulp
+- gulp												/ Default / Compile html (pugjs)
+- gulp test											/ Default / Compile stuff in /tests
+
 npm
 - install package 									/ > npm i <package_name>
 -- install dev package								/ > npm i -D <package_name>
@@ -38,7 +45,7 @@ npm
 
 ##### Links refs.
 gulp
-- Clean gulpfile.js & dedicated tasks files 		/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
+- TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
 
 html
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility

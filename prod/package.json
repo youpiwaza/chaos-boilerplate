@@ -21,6 +21,7 @@
   "author": "Masamune / Maxime Chevasson",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0"
   }
 }
