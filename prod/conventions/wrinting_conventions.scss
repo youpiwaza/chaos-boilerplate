@@ -1,0 +1,196 @@
+//// Basic sass/less organisation rules
+
+// Note : Analyse produced css and optimize it before validation, cf. http://csswizardry.com/2014/10/the-specificity-graph/
+
+// Use of multiple slashes to  prioritize comments
+//// 4 slashes for a title
+/// 3 slashes for a subtitle
+// 2 slashes for a regular comment
+
+// Never use more than 2 levels of nesting (page specific > component > element)
+.page-style-only-change-in-this-page {
+
+  // parent-children // smacss
+  .whichComponent-whichElement {
+
+    .nope {
+      //
+    }
+  }
+}
+
+// Always sort your styles alphabetically
+.alphabetical {
+  // Yay
+  background: #000;
+  color: #0ff;
+  padding: 10px;
+
+  // Nope
+  padding: 10px;
+  color: #0ff;
+  background: #000;
+}
+
+// Colors / Don't use literals, all lowercaps
+.colors {
+  // Yay
+  background: #f00;
+
+  // Nope
+  color: red;
+}
+
+/// Global ordering
+// Leave a line between each category
+.full-ordering-example {
+    // Extends / careful with that
+    @extend .module;
+
+    // mixins
+    @include transition(all 0.3s ease-out);
+
+    /// Classic rules, alphabetically
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 20px;
+
+    // Other mixins, like rules groups
+    @include .placeholder;
+
+    /// States, modifiers & themes
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+    &::before {
+      background: #f00;
+      content: "";
+    }
+    &.active {
+      border-bottom: 2px solid #0f0;
+    }
+
+    /// Responsive design
+    // MD
+    @include responsive-xs({
+      @include .flarge; // font-size: 16px;
+    });
+
+    /// Childrens rules
+    // Basic elements
+    & > a {
+      color: #00f;
+    }
+
+    // Classes / Nesting
+    // ~Should not have : Full smacss/atomic > .element + .element-child
+    // Consider use only for page/parent specific styling
+    .parent {
+      .child;
+    }
+    // If 2 or more .classes starts with the same word, those with dashes are going after, to keep it alphabetically
+    .parent-number2 {
+      .child2;
+    }
+
+    /// Heritage / sub classes
+    // Should stay last to allow overload
+
+    // When referencing parent selector, add full class name in comment, to facilitate global searches
+    // myClass-big
+    &-big {
+      .flarger;
+    }
+    // Same for/if mixins
+    @if (@type = 'big') {
+      .flarger;
+    }
+}
+
+// Same, wo comments
+// Leave a line between each category
+.full-ordering-example {
+    @extend .module;
+
+    @include transition(all 0.3s ease-out);
+
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 20px;
+
+    @include .placeholder;
+
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+    &::before {
+      background: #f00;
+      content: "";
+    }
+    &.active {
+      border-bottom: 2px solid #0f0;
+    }
+
+    @include responsive-xs({
+      @include .flarge; // font-size: 16px;
+    });
+
+    & > a {
+      color: #00f;
+    }
+
+    .parent {
+      .child;
+    }
+    .parent-number2 {
+      .child2;
+    }
+
+    &-big {
+      .flarger;
+    }
+    // Same for/if mixins
+    @if (@type = 'big') {
+      .flarger;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
