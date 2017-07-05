@@ -54,22 +54,34 @@ html
 
 
 ##### TODO
+Legend:
+Todo / ☐
+WIP / ✅
+Done / ✔
+Love yah / ❤
+Nah / ✘
+
+
+
 divers
-- Google analytics
+- google analytics							☐
+- recup bases mah-skeleton 					☐
+- recup bases chaos		 					☐
 
 gulp
-- live reload
+- live reload								☐
 
 js
-- gestion FOUC
-- uglyfier
+- basic js files							☐
+- gestion FOUC								☐
+- uglyfier									☐
 
 sass
-- bourbon & co
-- breakpoints
-- choix font sizes (voir bourbon ?)
-- normalize (ci besoin ek bourbon)
-- mixins
+- bourbon & co								☐
+- breakpoints								☐
+- choix font sizes (voir bourbon ?)			☐
+- normalize (ci besoin ek bourbon)			☐
+- mixins									☐
 
 
 
