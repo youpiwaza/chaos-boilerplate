@@ -64,27 +64,28 @@ Nah / ✘
 
 
 divers
-- google analytics							☐
-- recup bases mah-skeleton 					✅
-- recup bases chaos		 					✅
-- page toolbox								❤
-- revoir indentation tous (tab 4)			❤
+- google analytics									☐
+- recup bases mah-skeleton 							✅
+- recup bases chaos		 							✅
+- page toolbox										❤
+- revoir indentation tous (tab 4)					❤
 
 gulp
-- live reload								❤
+- live reload										❤
+-- watch + cache									✔
 
 js
-- basic js files							☐
-- gestion FOUC								☐
-- uglyfier									☐
+- basic js files									☐
+- gestion FOUC										☐
+- uglyfier											☐
 
 sass
-- bourbon & co								❤
-- breakpoints								☐
-- choix font sizes (voir bourbon ?)			☐
-- normalize (ci besoin ek bourbon)			☐
-- mixins									☐
-- créer variables de bases (fonts, etc.)	☐
+- bourbon & co										❤
+- breakpoints										☐
+- choix font sizes (voir bourbon ?)					☐
+- normalize (ci besoin ek bourbon)					☐
+- mixins											☐
+- créer variables de bases (colors, fonts, etc.)	☐
 
 
 
