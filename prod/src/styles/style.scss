@@ -1,6 +1,8 @@
 // Main scss, includes goes here
 
-@import '_variables';
-@import '_mixins';
+@import 'variables';
+@import 'mixins';
 
-@import '_base';
+@import 'base';
+
+@import 'shame';
