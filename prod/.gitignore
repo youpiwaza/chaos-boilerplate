@@ -23,5 +23,5 @@ package-lock.json
 css-unminified/
 
 ## tests
-tests/pugjs/html
-tests/sass/style.css
+#tests/pugjs/*.html
+#tests/sass/*..css
