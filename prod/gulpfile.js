@@ -3,6 +3,7 @@
 var gulp 					= require('gulp'),
 	prefix 					= require('gulp-autoprefixer'),
 	cache 					= require('gulp-cached'),
+	jquery 					= require('gulp-jquery'),
 	minifycss 				= require('gulp-minify-css'),
 	notify 					= require('gulp-notify'),
 	plumber					= require('gulp-plumber'),
@@ -45,6 +46,12 @@ var paths = {
 		destDev: './src/styles/css-unminified'
 	},
 
+	// scripts
+	scripts: {
+		src: './node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+		dest: './build/scripts'
+	},
+
 	// watch
 	watch: {
 		scripts: 'src/scripts/**/*.js',
@@ -70,9 +77,11 @@ gulp.task('browser-sync', function() {
 
 /// Straight copy of assets
 gulp.task('copy-assets', function() {
+	gulp.start('jquery');
 	return gulp.src(paths.assets.src)
 		.pipe(gulp.dest(paths.assets.dest));
 });
+
 
 /// Pugjs html templates compilation
 gulp.task('html', function(){
@@ -101,6 +110,18 @@ gulp.task('html', function(){
 
 		// Call browser reload
 		.pipe(browserSync.stream());
+});
+
+
+// jquery
+gulp.task('jquery', function () {
+	return gulp.src(paths.scripts.src)
+		/*
+		.pipe(jquery({
+			flags: ['-deprecated', '-event/alias', '-ajax/script', '-ajax/jsonp', '-exports/global']
+		}))
+		*/
+		.pipe(gulp.dest(paths.scripts.dest));
 });
 
 
@@ -155,10 +176,12 @@ gulp.task('sass', function (){
 });
 
 
+
 //// Commands
 gulp.task('default', [ 'copy-assets', 'html', 'sass' ]);
 gulp.task('devBuild', [ 'html', 'sass' ]);
 gulp.task('watch', ['devBuild'], watch);
+
 
 
 //// Functions
