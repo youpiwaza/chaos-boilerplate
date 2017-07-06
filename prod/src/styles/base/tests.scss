@@ -4,39 +4,175 @@
 @import "neat";
 
 
-// Font icons tests
-.myIcons {
-	font-size: 40px;
-	margin-top: 20px;
-
-	span {
-		margin-right: 20px;
-	}
-
-	.iconheart2 {
-		color: $color-error;
-	}
-	.iconstaro {
-		color: #77a5ed;
-	}
-	.iconpacman {
-		text-shadow: $color-fourth 1px 1px;
-		color: #ebaf1d;
-	}
-	.iconfire {
-		color: #e36817;
-	}
-}
-
 // Neat tests
 .default-neat-grid {
-  @include grid-container;
-  margin: 0 auto;
-  max-width: 1200px;
+	@include grid-container;
+	margin: 0 auto;
+	max-width: 1200px;
 }
 
 .a-single-column {
-  @include grid-column(1);
-  background-color: red;
-  height: 100px;
+	@include grid-column(1);
+	background-color: red;
+	height: 100px;
+}
+
+// refills tests
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  .card-image {
+    background-color: $card-image-hover-color;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+.comment {
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $comment-gutter: 1.4em;
+  $comment-image-padding: 0.7em;
+  $comment-image-width: 4em;
+  $comment-color: $base-font-color;
+  $comment-background: lighten($action-color, 15%);
+  $comment-detail-color: transparentize($comment-color, 0.5);
+  $comment-image-vert-alignment: top;
+
+  border-bottom: 1px solid transparentize($comment-color, 0.9);
+  display: table;
+  margin-bottom: $base-spacing;
+  padding-bottom: 1em;
+  width: 100%;
+
+  .comment-image,
+  .comment-content {
+    display: table-cell;
+    vertical-align: $comment-image-vert-alignment;
+  }
+
+  .comment-image {
+    padding-right: $comment-gutter;
+
+    > img {
+      background: $comment-background;
+      border-radius: $base-border-radius;
+      display: block;
+      height: auto;
+      max-width: none;
+      padding: $comment-image-padding;
+      width: $comment-image-width;
+    }
+
+    .comment-reverse-order & {
+      padding-left: 10px;
+      padding-right: 0;
+    }
+  }
+
+  .comment-content {
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+      margin: 0 0 0.5em 0;
+    }
+
+    p {
+      line-height: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p.comment-detail {
+      color: $comment-detail-color;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
 }
