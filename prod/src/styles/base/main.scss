@@ -1,5 +1,9 @@
 //// Manage import order for scss files
 
+// Ext
+@import 'bourbon';
+
+// Mine
 @import 'variables';
 @import 'functions';
 
@@ -10,4 +14,4 @@
 
 @import 'structure';
 
-@import 'shame';
+@import '_shame';

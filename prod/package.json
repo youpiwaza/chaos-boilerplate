@@ -32,6 +32,7 @@
 		"gulp-sass": "^3.1.0",
 		"gulp-sass-partials-imported": "^1.0.5",
 		"gulp-util": "^3.0.8",
-		"gulp-watch": "^4.3.11"
+		"gulp-watch": "^4.3.11",
+		"node-bourbon": "^4.2.8"
 	}
 }

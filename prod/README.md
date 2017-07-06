@@ -67,7 +67,7 @@ divers										  status / priorities
 - google analytics									☐
 - recup bases mah-skeleton 							✅ 7
 - recup bases chaos		 							✅ 6
-- page toolbox										❤ 4
+- page toolbox										❤ 5
 - revoir indentation tous (tab 4)					✔
 
 html
@@ -83,7 +83,7 @@ js
 - uglyfier											☐
 
 sass
-- bourbon & co										❤ 5
+- bourbon & co										✅
 - breakpoints										☐
 - choix font sizes (voir bourbon ?)					☐
 - normalize (ci besoin ek bourbon)					☐

@@ -1,5 +1,5 @@
 //// Requires
-
+/// gulp stuff
 var gulp 					= require('gulp'),
 	prefix 					= require('gulp-autoprefixer'),
 	cache 					= require('gulp-cached'),
@@ -11,6 +11,7 @@ var gulp 					= require('gulp'),
 	sassPartialsImported 	= require('gulp-sass-partials-imported');
 	util 					= require('gulp-util');
 
+/// other stuff
 var browserSync 			= require('browser-sync').create();
 
 
@@ -37,6 +38,7 @@ var paths = {
 	// sass
 	styles: {
 		src: './src/styles',
+		srcBourbon: require('node-bourbon').includePaths,
 		files: './src/styles/**/*.scss',
 		dest: './build/styles',
 		destDev: './src/styles/css-unminified'
@@ -49,6 +51,7 @@ var paths = {
 		templates: 'src/**/*.pug'
 	}
 }
+
 
 
 
@@ -132,7 +135,7 @@ gulp.task('sass', function (){
 		.pipe(sass({
 			outputStyle: 'expanded',
 			sourceComments: 'map',
-			includePaths : [paths.styles.src]
+			includePaths : [ paths.styles.srcBourbon, paths.styles.src ]
 		}))
 		// If there is an error, don't stop compiling but use the custom displayError function
 		
