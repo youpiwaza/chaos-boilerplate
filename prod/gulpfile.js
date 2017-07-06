@@ -39,6 +39,7 @@ var paths = {
 	styles: {
 		src: './src/styles',
 		srcBourbon: require('node-bourbon').includePaths,
+		srcNeat: require('node-neat').includePaths,
 		files: './src/styles/**/*.scss',
 		dest: './build/styles',
 		destDev: './src/styles/css-unminified'
@@ -135,7 +136,7 @@ gulp.task('sass', function (){
 		.pipe(sass({
 			outputStyle: 'expanded',
 			sourceComments: 'map',
-			includePaths : [ paths.styles.srcBourbon, paths.styles.src ]
+			includePaths : [ paths.styles.srcBourbon, paths.styles.srcNeat, paths.styles.src ]
 		}))
 		// If there is an error, don't stop compiling but use the custom displayError function
 		
