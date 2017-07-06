@@ -68,7 +68,7 @@ divers										  status / priorities
 - recup bases mah-skeleton 							✅ 7
 - recup bases chaos		 							✅ 6
 - page toolbox										❤ 4
-- revoir indentation tous (tab 4)					❤ 2
+- revoir indentation tous (tab 4)					✔
 
 html
 - gestion img src pour mobile						☐
