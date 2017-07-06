@@ -70,6 +70,9 @@ divers										  status / priorities
 - page toolbox										❤ 4
 - revoir indentation tous (tab 4)					❤ 2
 
+html
+- gestion img src pour mobile						☐
+
 gulp
 - live reload										❤ 1
 -- watch + cache									✔
@@ -88,6 +91,8 @@ sass
 - créer variables de bases (colors, fonts, etc.)	☐
 
 
-
+/// Trier différentes tâches
+> boilerplate
+> site
 
 
