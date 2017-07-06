@@ -77,20 +77,20 @@ gulp.task('html', function(){
 		// prevent watch crash on error
 		.pipe(plumber({
 			errorHandler: function(err) {
-	            notify.onError({
-	                title: "Gulp error in " + err.plugin,
-	                // message:  err.toString()
-	                message:  err.message
-	            })(err);
-	        },
-	        handleError: function (err) {
-	            console.log(err);
-	            this.emit('end');
-	        }
-	    }))
+				notify.onError({
+					title: "Gulp error in " + err.plugin,
+					// message:  err.toString()
+					message:  err.message
+				})(err);
+			},
+			handleError: function (err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
 
 		// caching to fasten watch
-	    .pipe(cache('htmling'))
+		.pipe(cache('htmling'))
 
 		.pipe(pug())
 		.pipe(gulp.dest(paths.pug.dest))
@@ -108,24 +108,24 @@ gulp.task('sass', function (){
 		// prevent watch crash on error
 		.pipe(plumber({
 			errorHandler: function(err) {
-	            notify.onError({
-	                title: "Gulp error in " + err.plugin,
-	                // message:  err.toString()
-	                message:  err.message
-	            })(err);
-	        },
-	        handleError: function (err) {
-	            console.log(err);
-	            this.emit('end');
-	        }
-	    }))
+				notify.onError({
+					title: "Gulp error in " + err.plugin,
+					// message:  err.toString()
+					message:  err.message
+				})(err);
+			},
+			handleError: function (err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
 
-	    // caching to fasten watch
-	    .pipe(cache('sassing'))
+		// caching to fasten watch
+		.pipe(cache('sassing'))
 
-	    // during watch, force recompile of un modified scss files that imports modified sass files
-	    // allow sass watch with cache
-	    .pipe(sassPartialsImported(paths.styles.src))
+		// during watch, force recompile of un modified scss files that imports modified sass files
+		// allow sass watch with cache
+		.pipe(sassPartialsImported(paths.styles.src))
 
 		// Sass options - make the output expanded and add the source map
 		// Also pull the include path from the paths object

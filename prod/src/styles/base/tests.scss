@@ -3,24 +3,24 @@
 
 // Font icons tests
 .myIcons {
-  font-size: 40px;
-  margin-top: 20px;
+	font-size: 40px;
+	margin-top: 20px;
 
-  span {
-    margin-right: 20px;
-  }
+	span {
+		margin-right: 20px;
+	}
 
-  .iconheart2 {
-    color: $color-error;
-  }
-  .iconstaro {
-    color: #77a5ed;
-  }
-  .iconpacman {
-    text-shadow: $color-fourth 1px 1px;
-    color: #ebaf1d;
-  }
-  .iconfire {
-    color: #e36817;
-  }
+	.iconheart2 {
+		color: $color-error;
+	}
+	.iconstaro {
+		color: #77a5ed;
+	}
+	.iconpacman {
+		text-shadow: $color-fourth 1px 1px;
+		color: #ebaf1d;
+	}
+	.iconfire {
+		color: #e36817;
+	}
 }
