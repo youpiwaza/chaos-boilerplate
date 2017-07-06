@@ -74,7 +74,7 @@ html
 - gestion img src pour mobile						☐
 
 gulp
-- live reload										❤ 1
+- live reload										✔
 -- watch + cache									✔
 
 js
