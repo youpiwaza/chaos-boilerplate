@@ -52,6 +52,8 @@ html
 - font-icons
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility
 
+git horsesh*t
+- https://stackoverflow.com/questions/11451535/gitignore-is-not-working
 
 ##### TODO
 Legend:
