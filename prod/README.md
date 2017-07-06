@@ -65,37 +65,37 @@ Nah / ✘
 
 divers										  status / priorities
 - google analytics									☐
-- recup bases mah-skeleton 							✅ 7
-- recup bases chaos		 							✅ 6
-- page toolbox										❤ 5
+- recup bases mah-skeleton 							✅ 
+- recup bases chaos		 							✅ 
+- page toolbox										❤ 3
 - revoir indentation tous (tab 4)					✔
 
 html
-- gestion img src pour mobile						☐
+- gestion img src pour mobile						☐ 4
 
 gulp
 - live reload										✔
 -- watch + cache									✔
 
 js
-- basic js files									☐
+- basic js files									✔
+-- uglyfier											☐
+-- browsersync link									☐
 - gestion FOUC										☐
-- uglyfier											☐
 
 sass
-- bourbon & co										✅
+- bourbon & co										✔
 -- bourbon											✔
 -- neat												✔
--- refills											✅
+-- refills											✘
 
-- breakpoints										☐
-- choix font sizes (voir bourbon ?)					☐
-- normalize (ci besoin ek bourbon)					☐
+- breakpoints responsive							☐
+- normalize (ci besoin ek bourbon)					☐ 2
 - mixins											☐
-- créer variables de bases (colors, fonts, etc.)	☐
+- créer variables de bases (colors, fonts, etc.)	☐ 3 // check bases bourbon / neat
 
 
-/// Trier différentes tâches
+/// Trier différentes tâches						☐ 1
 > boilerplate
 > site
 
