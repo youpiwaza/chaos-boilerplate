@@ -9,8 +9,9 @@ var gulp 					= require('gulp'),
 	pug 					= require('gulp-pug'),
 	sass 					= require('gulp-sass'),
 	sassPartialsImported 	= require('gulp-sass-partials-imported');
-	util 					= require('gulp-util'),
+	util 					= require('gulp-util');
 
+var browserSync 			= require('browser-sync').create();
 
 
 
@@ -22,6 +23,10 @@ var paths = {
 		src: 'src/assets/**/*.*',
 		dest: 'build/assets'
 	},
+
+	// base src
+	src: 'src/',
+	build: 'build/',
 
 	// html
 	pug: {
@@ -48,6 +53,16 @@ var paths = {
 
 
 //// Tasks
+
+/// Browsersync server, for test purpose
+gulp.task('browser-sync', function() {
+	browserSync.init({
+		server: {
+			baseDir: paths.build
+		}
+	});
+});
+
 
 /// Straight copy of assets
 gulp.task('copy-assets', function() {
@@ -78,7 +93,10 @@ gulp.task('html', function(){
 	    .pipe(cache('htmling'))
 
 		.pipe(pug())
-		.pipe(gulp.dest(paths.pug.dest));
+		.pipe(gulp.dest(paths.pug.dest))
+
+		// Call browser reload
+		.pipe(browserSync.stream());
 });
 
 
@@ -125,8 +143,11 @@ gulp.task('sass', function (){
 		// Un compressed css version for debug purposes
 		.pipe(gulp.dest(paths.styles.destDev))
 		.pipe(minifycss())
-		// Funally put the compiled sass into a css file
+		// Finally put the compiled sass into a css file
 		.pipe(gulp.dest(paths.styles.dest))
+
+		// Call browser reload
+		.pipe(browserSync.stream());
 });
 
 
@@ -139,7 +160,11 @@ gulp.task('watch', ['devBuild'], watch);
 //// Functions
 
 // dedicated function for wath task
-function watch() {  
+function watch() {
+
+	// browser-sync local server
+	gulp.start('browser-sync');
+
 	gulp.watch(
 		[	
 			// paths.watch.scripts,
