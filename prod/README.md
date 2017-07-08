@@ -48,6 +48,9 @@ npm
 gulp
 - TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
 
+folder / files / misc
+- git attributes 									/ https://git-scm.com/docs/gitattributes
+
 html
 - font-icons
 - html 5 boilerplate								/ https://html5boilerplate.com/
