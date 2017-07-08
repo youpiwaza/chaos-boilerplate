@@ -78,6 +78,8 @@ divers										  status / priorities
 - recup bases chaos		 							✅ 
 - page toolbox										❤ 3
 - revoir indentation tous (tab 4)					✔
+- 404												☐
+- vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 
 html
 - gestion img src pour mobile						☐ 4
