@@ -49,8 +49,9 @@ var paths = {
 
 	// scripts
 	scripts: {
-		src: './node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
-		dest: './build/scripts'
+		dest: './build/scripts',
+		jquerySrc: './node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+		src: './src/scripts/*'
 	},
 
 	// watch
@@ -116,12 +117,19 @@ gulp.task('html', function(){
 
 // jquery
 gulp.task('jquery', function () {
-	return gulp.src(paths.scripts.src)
+	return gulp.src(paths.scripts.jquerySrc)
 		/*
 		.pipe(jquery({
 			flags: ['-deprecated', '-event/alias', '-ajax/script', '-ajax/jsonp', '-exports/global']
 		}))
 		*/
+		.pipe(gulp.dest(paths.scripts.dest));
+});
+
+
+// js
+gulp.task('js', function () {
+	return gulp.src(paths.scripts.src)
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
@@ -179,8 +187,8 @@ gulp.task('sass', function (){
 
 
 //// Commands
-gulp.task('default', [ 'copy-assets', 'html', 'sass' ]);
-gulp.task('devBuild', [ 'html', 'sass' ]);
+gulp.task('default', [ 'copy-assets', 'html', 'js', 'sass' ]);
+gulp.task('devBuild', [ 'html', 'sass', 'js' ]);
 gulp.task('w', ['devBuild'], watch); // watch
 
 

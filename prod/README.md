@@ -90,7 +90,7 @@ gulp
 
 js
 - basic js files									✔
--- uglyfier											☐
+-- minifier & uglyfier								☐
 -- browsersync link									☐
 - gestion FOUC										☐
 - jQuery											☐
