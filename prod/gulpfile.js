@@ -23,44 +23,44 @@ var browserSync 			= require('browser-sync').create();
 var paths = {
 	// assets
 	assets: {
-		dest: 'build/assets',
-		src: 'src/assets/**/*.*'
+							dest: 'build/assets',
+							src: 'src/assets/**/*.*'
 	},
 
 	// base src
-	build: 'build/',
+	build: 					'build/',
 
 	// html
 	pug: {
-		dest: 'build/',
-		src: 'src/*.pug'
+							dest: 'build/',
+							src: 'src/*.pug'
 	},
 
 	// scripts
 	scripts: {
-		dest: './build/scripts',
-		jquerySrc: './node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
-		src: './src/scripts/*'
+		dest: 				'./build/scripts',
+		jquerySrc: 			'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+		src: 				'./src/scripts/*'
 	},
 	
-	src: 'src/',
+	src: 					'src/',
 	
 	// sass
 	styles: {
-		dest: './build/styles',
-		destDev: './src/styles/css-unminified',
-		files: './src/styles/**/*.scss',
-		src: './src/styles',
-		srcBourbon: require('node-bourbon').includePaths,
-		srcNeat: require('node-neat').includePaths,
-		srcNormalize: require('node-normalize-scss').includePaths
+		dest: 				'./build/styles',
+		destDev: 			'./src/styles/css-unminified',
+		files: 				'./src/styles/**/*.scss',
+		src: 				'./src/styles',
+		srcBourbon: 		require('node-bourbon').includePaths,
+		srcNeat: 			require('node-neat').includePaths,
+		srcNormalize: 		require('node-normalize-scss').includePaths
 	},
 
 	// watch
 	watch: {
-		scripts: 'src/scripts/**/*.js',
-		styles: 'src/styles/**/*.scss',
-		templates: 'src/**/*.pug'
+		scripts: 			'src/scripts/**/*.js',
+		styles: 			'src/styles/**/*.scss',
+		templates: 			'src/**/*.pug'
 	}
 }
 
