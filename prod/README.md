@@ -18,6 +18,13 @@ npm
 
 
 
+##### Main ressources locations
+html (pugjs) 										> /src & src/templates
+css (sass & bourbon)								> /src/styles
+js													> src/scripts
+
+
+
 ##### Techno used
 - node												/ https://nodejs.org/en/
 - npm												/ https://www.npmjs.com/
