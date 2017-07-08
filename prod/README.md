@@ -2,6 +2,22 @@
 
 
 
+
+
+##### Basic commands
+
+gulp
+- gulp												/ Default / Compile html (pugjs)
+- gulp test											/ Default / Compile stuff in /tests
+
+npm
+- install package 									/ > npm i <package_name>
+-- install dev package								/ > npm i -D <package_name>
+- update 											/ > npm install npm@latest -g
+- update packages 									/ > npm update
+
+
+
 ##### Techno used
 - node												/ https://nodejs.org/en/
 - npm												/ https://www.npmjs.com/
@@ -32,19 +48,6 @@
 -- json syntax										/ https://github.com/ColibriApps/MonokaiJsonPlus
 
 
-##### Basic commands
-
-gulp
-- gulp												/ Default / Compile html (pugjs)
-- gulp test											/ Default / Compile stuff in /tests
-
-npm
-- install package 									/ > npm i <package_name>
--- install dev package								/ > npm i -D <package_name>
-- update 											/ > npm install npm@latest -g
-- update packages 									/ > npm update
-
-
 
 ##### Links refs. / Thanks
 gulp
@@ -53,11 +56,11 @@ gulp
 folder / files / misc
 - editor config										/ http://editorconfig.org/
 - git attributes 									/ https://git-scm.com/docs/gitattributes
+- modernizr											/ https://modernizr.com/
 
 html
 - font-icons
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility
-
 
 git horsesh*t
 - https://stackoverflow.com/questions/11451535/gitignore-is-not-working

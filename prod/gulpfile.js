@@ -5,6 +5,7 @@ var gulp 					= require('gulp'),
 	cache 					= require('gulp-cached'),
 	jquery 					= require('gulp-jquery'),
 	minifycss 				= require('gulp-minify-css'),
+	modernizr 				= require('gulp-modernizr');
 	notify 					= require('gulp-notify'),
 	plumber					= require('gulp-plumber'),
 	pug 					= require('gulp-pug'),
@@ -132,6 +133,7 @@ gulp.task('jquery', function () {
 // js
 gulp.task('js', function () {
 	return gulp.src(paths.scripts.src)
+		// .pipe(modernizr()) // activate if needed
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
