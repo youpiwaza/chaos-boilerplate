@@ -49,6 +49,7 @@ gulp
 - TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
 
 folder / files / misc
+- editor config										/ http://editorconfig.org/
 - git attributes 									/ https://git-scm.com/docs/gitattributes
 
 html
