@@ -35,6 +35,7 @@
 		"gulp-util": "^3.0.8",
 		"gulp-watch": "^4.3.11",
 		"node-bourbon": "^4.2.8",
-		"node-neat": "^2.0.0-beta.0"
+		"node-neat": "^2.0.0-beta.0",
+		"node-normalize-scss": "^3.0.0"
 	}
 }

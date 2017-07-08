@@ -1,6 +1,7 @@
 //// Manage import order for scss files
 
 // Ext
+@import "normalize";
 @import 'bourbon';
 @import "neat";
 
@@ -15,4 +16,5 @@
 
 @import 'structure';
 
+@import '_tests';
 @import '_shame';

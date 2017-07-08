@@ -14,9 +14,11 @@
 -- gitkraken										/ https://www.gitkraken.com/
 
 - html
+-- html 5 boilerplate								/ https://html5boilerplate.com/
 -- pugss (ex jade)									/ https://pugjs.org/
 
 - css
+-- normalize										/ https://www.npmjs.com/package/node-normalize-scss
 -- sass												/ http://sass-lang.com/
 --- bourbon											/ http://bourbon.io/
 ---- neat											/ http://neat.bourbon.io/
@@ -54,8 +56,8 @@ folder / files / misc
 
 html
 - font-icons
-- html 5 boilerplate								/ https://html5boilerplate.com/
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility
+
 
 git horsesh*t
 - https://stackoverflow.com/questions/11451535/gitignore-is-not-working

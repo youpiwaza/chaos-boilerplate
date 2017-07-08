@@ -9,7 +9,7 @@ var gulp 					= require('gulp'),
 	plumber					= require('gulp-plumber'),
 	pug 					= require('gulp-pug'),
 	sass 					= require('gulp-sass'),
-	sassPartialsImported 	= require('gulp-sass-partials-imported');
+	sassPartialsImported 	= require('gulp-sass-partials-imported'); // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
 	util 					= require('gulp-util');
 
 /// other stuff
@@ -52,7 +52,8 @@ var paths = {
 		files: './src/styles/**/*.scss',
 		src: './src/styles',
 		srcBourbon: require('node-bourbon').includePaths,
-		srcNeat: require('node-neat').includePaths
+		srcNeat: require('node-neat').includePaths,
+		srcNormalize: require('node-normalize-scss').includePaths
 	},
 
 	// watch
@@ -167,7 +168,7 @@ gulp.task('sass', function (){
 		.pipe(sass({
 			outputStyle: 'expanded',
 			sourceComments: 'map',
-			includePaths : [ paths.styles.srcBourbon, paths.styles.srcNeat, paths.styles.src ]
+			includePaths : [ paths.styles.srcNormalize, paths.styles.srcBourbon, paths.styles.srcNeat, paths.styles.src ]
 		}))
 		// If there is an error, don't stop compiling but use the custom displayError function
 		
