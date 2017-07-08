@@ -23,28 +23,17 @@ var browserSync 			= require('browser-sync').create();
 var paths = {
 	// assets
 	assets: {
-		src: 'src/assets/**/*.*',
-		dest: 'build/assets'
+		dest: 'build/assets',
+		src: 'src/assets/**/*.*'
 	},
 
 	// base src
-	src: 'src/',
 	build: 'build/',
 
 	// html
 	pug: {
-		src: 'src/*.pug',
-		dest: 'build/'
-	},
-
-	// sass
-	styles: {
-		src: './src/styles',
-		srcBourbon: require('node-bourbon').includePaths,
-		srcNeat: require('node-neat').includePaths,
-		files: './src/styles/**/*.scss',
-		dest: './build/styles',
-		destDev: './src/styles/css-unminified'
+		dest: 'build/',
+		src: 'src/*.pug'
 	},
 
 	// scripts
@@ -52,6 +41,18 @@ var paths = {
 		dest: './build/scripts',
 		jquerySrc: './node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
 		src: './src/scripts/*'
+	},
+	
+	src: 'src/',
+	
+	// sass
+	styles: {
+		dest: './build/styles',
+		destDev: './src/styles/css-unminified',
+		files: './src/styles/**/*.scss',
+		src: './src/styles',
+		srcBourbon: require('node-bourbon').includePaths,
+		srcNeat: require('node-neat').includePaths
 	},
 
 	// watch
