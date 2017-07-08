@@ -1,10 +1,8 @@
 //// Fonts imports related stylesheet
 
-@include font-face('Knewave', '../../assets/fonts/Knewave/Knewave-Regular', $exts: 'ttf');
+/// Includes
+@include font-face($fontTitle, $fontsPath + '/' + $fontTitle + '/' + $fontTitle + '-BoldItalic', $exts: 'ttf');
 
-@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Bold', bold, $exts: 'ttf');
-@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-BoldItalic', bold, italic, $exts: 'ttf');
-@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Italic', null, italic, $exts: 'ttf');
-@include font-face('Raleway', '../../assets/fonts/Raleway/Raleway-Regular', $exts: 'ttf');
-
-@include font-face('SourceCodePro', '../../assets/fonts/SourceCodePro/SourceCodePro-Regular', $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Light', $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-LightItalic', null, italic, $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Medium', bold, $exts: 'ttf');
