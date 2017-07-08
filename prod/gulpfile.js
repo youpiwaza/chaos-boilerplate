@@ -181,7 +181,7 @@ gulp.task('sass', function (){
 //// Commands
 gulp.task('default', [ 'copy-assets', 'html', 'sass' ]);
 gulp.task('devBuild', [ 'html', 'sass' ]);
-gulp.task('watch', ['devBuild'], watch);
+gulp.task('w', ['devBuild'], watch); // watch
 
 
 
