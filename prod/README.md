@@ -44,7 +44,7 @@ npm
 
 
 
-##### Links refs.
+##### Links refs. / Thanks
 gulp
 - TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
 
@@ -59,6 +59,8 @@ html
 
 git horsesh*t
 - https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+
+
 
 ##### TODO
 Legend:
@@ -89,12 +91,14 @@ js
 -- uglyfier											☐
 -- browsersync link									☐
 - gestion FOUC										☐
+- jQuery											☐
 
 sass
 - bourbon & co										✔
 -- bourbon											✔
 -- neat												✔
 -- refills											✘
+- Modernizr, Normalize.css 							☐
 
 - breakpoints responsive							☐
 - normalize (ci besoin ek bourbon)					☐ 2
@@ -105,5 +109,3 @@ sass
 /// Trier différentes tâches						☐ 1
 > boilerplate
 > site
-
-

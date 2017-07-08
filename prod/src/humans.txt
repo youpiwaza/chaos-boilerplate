@@ -1,9 +1,20 @@
-/* TEAM */
-Author: Maxime Chevasson
-Email: masamune.code@gmail.com
+# TEAM
 
-/* SITE */
-Source: :x
+	Maxime Chevasson -- Nice guy & programmer -- masamune.code@gmail.com -- masamune.fr
 
-/* LIBRARIES */
-cf. package.json
+
+# THANKS
+	
+	All guys from technologies named right after ;D
+    humanstxt.org/
+    editorconfig
+    Emmet ❤
+
+# TECHNOLOGY COLOPHON
+
+	Sublim text 3
+	node, gulp and the tons of plugins (cf. package.json), git, git kraken
+	html5, pugjs
+	css3, sass, bourbon suite
+	javascript, jquery
+	Font icons librairies
