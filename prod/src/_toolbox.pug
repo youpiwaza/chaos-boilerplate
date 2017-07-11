@@ -1,11 +1,175 @@
 include templates/_vars.pug
 
-- var pageName = "Toolbox"
+- var pageName = "Toolboi"
 
 include templates/_html-header.pug
 
-h2 "Chaos" boilerplate
-p Have fun using it :)
-p I'd recommand taking a look to the toolbox page, and then to the readme.md
+h1 "Chaos" toolboi
+p This page allw a display of all the elements included in the template, in order to control the proper looks and display of your website.
+p Don't hesitate to add your own elements in order to test them ;)
+
+hr
+
+h2 Headings
+.titles 
+	h1 h1 title
+	h2 h2 title
+	h3 h3 title
+	h4 h4 title
+	h5 h5 title
+	h6 h6 title
+
+hr
+
+h2 Paragraph
+p Lorem ipsum dolor sit amet, <a href="#" title="Just a test link :D">test link</a> adipiscing elit. <strong>Bold test</strong> nullam dignissim convallis est. <em>Italic test</em> Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+
+p Lorem ipsum dolor sit amet, emphasis consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+
+hr
+
+h2 Images
+p Here's image management, with most use cases.
+
+hr
+
+h2 Lists
+h3 Definition List
+dl
+	dt Definition List Title
+	dd This is a definition list division.
+	dd This is a second definition list division.
+
+
+h3 Ordered List
+ol
+	- for (var i = 1; i <= 3; i++)
+		li= "item " + i
+
+h3 Unordered List
+ul
+	- for (var i = 1; i <= 3; i++)
+		li= "item " + i
+
+h3 Stacked List
+ul
+	- for (var i = 1; i <= 2; i++)
+		li= "item " + i
+			ul
+				- for (var j = 1; j <= 2; j++)
+					li= "sub-item " + j
+
+hr
+
+h2 Fieldsets and form elements
+p Form elements displayed in a table, in order to have proper alignement between labels and inputs.
+
+form
+	fieldset
+		legend My legend
+
+		table
+			tr
+				td
+					label(for='exampleTextId') Example text : 
+				td
+					input(id='exampleTextId' name='exampleText' type='text' placeholder='Firstname')
+
+			tr
+				td
+					label(for='exampleTextAreaId') Example textarea : 
+				td
+					textarea(id='exampleTextAreaId' name='exampleTextArea' placeholder='Your message here')
+			
+			tr
+				td
+					label(for='exampleSelectId') Example select : 
+				td
+					select(id='exampleSelectId' name='exampleSelect')
+						- for (var i = 1; i <= 2; i++)
+							optgroup(label='Option group ' + i)
+								- for (var j = 1; j <= 3; j++)
+									option(value=j)= 'Option ' + j
+
+			tr
+				td
+					label(for='exampleTextAreaId') Example radios without fieldset :
+				td
+					- for (var i = 1; i <= 3; i++)
+							label(for='exampleRadiosFId'+i)= 'item ' + i
+							input(id='exampleRadiosFId'+i name='exampleRadiosF' type='radio' value='value'+i)
+
+			tr
+				td
+					fieldset(id='exampleRadiosH')
+						legend Example radios fieldset horizontal
+						- for (var i = 1; i <= 3; i++)
+							label(for='exampleRadiosHId'+i)= 'item ' + i
+							input(id='exampleRadiosHId'+i name='exampleRadiosH' type='radio' value='value'+i)
+
+			tr
+				td
+					fieldset(id='exampleRadiosV')
+						legend Example radios fieldset vertical
+						- for (var i = 1; i <= 3; i++)
+							label(for='exampleRadiosVId'+i)= 'item ' + i
+							input(id='exampleRadiosVId'+i name='exampleRadiosV' type='radio' value='value'+i)
+
+			tr
+				td
+					label(for='exampleCheckboxes') Example checkboxes horizontal :
+				td
+					- for (var i = 1; i <= 3; i++)
+							label(for='exampleCheckboxesHId'+i)= 'item ' + i
+							input(id='exampleCheckboxesHId'+i name='exampleCheckboxesH' type='checkbox' value='value'+i)
+
+			tr
+				td
+					label(for='exampleCheckboxes') Example checkboxes vertical :
+				td
+					- for (var i = 1; i <= 3; i++)
+							label(for='exampleCheckboxesVId'+i)= 'item ' + i
+							input(id='exampleCheckboxesVId'+i name='exampleCheckboxesV' type='checkbox' value='value'+i)
+
+			tr
+				td
+					label(for='passwordId') Password : 
+				td
+					input(id='passwordId' name='password' type='password' placeholder='')
+
+			tr
+				td
+					label(for='fileId') File : 
+				td
+					input(id='fileId' name='file' type='file' placeholder='')
+
+			tr
+				td
+					input(id='submitId' name='submit' type='submit' value='Submit label')
+
+			tr
+				td
+					button(id='submitButtonId' name='submitButton' type='submit') Submit button label
+
+hr
+
+h2 Tables
+p Classic tables stuff
+
+table
+	- for (var i = 1; i <= 4; i++)
+		tr
+			- for (var j = 1; j <= 3; j++)
+				if i == 1
+					th= 'Tablea heading ' + j
+				else
+					td= 'Table content ' + (i-1) + ':' + j
+
+
+
+
+
+
+
 
 include templates/_html-footer.pug

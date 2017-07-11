@@ -9,9 +9,15 @@ body {
 // HX
 h1, h2, h3, h4, h5, h6 {
 	color: $color-secondary;
-	font-family: $fontTitle, cursive;
+	font-family: $fontTitle, serif;
 	letter-spacing: .1em;
 	text-shadow: 1px 2px $color-fourth;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-size: 3.5em - $i * .3;
+	}
 }
 
 // a & hover
@@ -30,6 +36,17 @@ a {
 	&.active {
 		color: $color-fourth;
 	}
+}
+
+// separator
+hr {
+	border-bottom: 1px solid $color-third;
+	margin: 1.5em 1em;
+}
+
+legend {
+	padding: 0 .5em;
+	margin: 0 1em;
 }
 
 /// Simple classes
