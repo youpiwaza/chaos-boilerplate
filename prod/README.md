@@ -53,6 +53,8 @@ js													> src/scripts
 -- package control 									/ https://packagecontrol.io/
 -- sass syntax										/ https://packagecontrol.io/packages/Syntax%20Highlighting%20for%20Sass
 -- json syntax										/ https://github.com/ColibriApps/MonokaiJsonPlus
+-- monokai ext. theme for color .md					/ https://github.com/jonschlinkert/sublime-monokai-extended
+-- pug & pug lint									/ https://github.com/benedfit/SublimeLinter-contrib-pug-lint
 
 
 
@@ -84,7 +86,6 @@ Nah / ✘
 
 
 misc										 status / priorities
-- coloration syntaxique pugjs						✅ 1
 - recup bases mah-skeleton 							✅ 3
 - recup bases chaos		 							✅ 3
 - page toolbox										✅ 2
@@ -106,12 +107,15 @@ js
 sass
 - breakpoints responsive							☐
 - mixins											☐
+- font inclusions, manage font styles imports		☐
+-- ex: _fonts.scss > -LightItalic ; use array
 
 
 
 
 ##### TODO DONE
 misc
+- coloration syntaxique pugjs						✔
 - revoir indentation tous (tab 4)					✔
 
 gulp
