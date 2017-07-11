@@ -90,6 +90,9 @@ misc										 status / priorities
 - recup bases chaos		 							✅ 3
 - page toolbox										✅ 2
 -- créer variables de bases (colors, fonts, etc.)	✅  // check bases bourbon / neat
+-- Images management
+-- containers management
+
 - 404												☐
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 - google analytics									☐
