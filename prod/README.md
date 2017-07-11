@@ -83,18 +83,36 @@ Love yah / ❤
 Nah / ✘
 
 
-
-divers										  status / priorities
-- google analytics									☐
-- recup bases mah-skeleton 							✅ 
-- recup bases chaos		 							✅ 
-- page toolbox										❤ 3
-- revoir indentation tous (tab 4)					✔
+misc										 status / priorities
+- coloration syntaxique pugjs						✅ 1
+- recup bases mah-skeleton 							✅ 3
+- recup bases chaos		 							✅ 3
+- page toolbox										✅ 2
+-- créer variables de bases (colors, fonts, etc.)	✅  // check bases bourbon / neat
 - 404												☐
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
+- google analytics									☐
+- proper # markdown
 
 html
 - gestion img src pour mobile						☐ 4
+- compo images + texte								☐ 5
+
+js
+-- minifier & uglyfier								☐
+-- browsersync link									☐
+- gestion FOUC										☐
+
+sass
+- breakpoints responsive							☐
+- mixins											☐
+
+
+
+
+##### TODO DONE
+misc
+- revoir indentation tous (tab 4)					✔
 
 gulp
 - live reload										✔
@@ -102,24 +120,12 @@ gulp
 
 js
 - basic js files									✔
--- minifier & uglyfier								☐
--- browsersync link									☐
-- gestion FOUC										☐
-- jQuery											☐
+- jQuery											✔
 
 sass
 - bourbon & co										✔
 -- bourbon											✔
 -- neat												✔
 -- refills											✘
-- Modernizr, Normalize.css 							☐
-
-- breakpoints responsive							☐
-- normalize (ci besoin ek bourbon)					☐ 2
-- mixins											☐
-- créer variables de bases (colors, fonts, etc.)	☐ 3 // check bases bourbon / neat
-
-
-/// Trier différentes tâches						☐ 1
-> boilerplate
-> site
+- Modernizr, Normalize.css 							✔
+- normalize (ci besoin ek bourbon)					✔
