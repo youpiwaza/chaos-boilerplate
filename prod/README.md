@@ -71,6 +71,11 @@ html
 - font-icons
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility
 
+optimisation
+- html tips											/ http://www.monitis.com/blog/30-tips-to-optimize-htmlcssimages-for-smooth-web-experience/
+- best practices									/ https://www.webpagefx.com/blog/web-design/20-html-best-practices-you-should-follow/
+- images src set									/ https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html
+
 git horsesh*t
 - https://stackoverflow.com/questions/11451535/gitignore-is-not-working
 
@@ -101,6 +106,14 @@ misc										 status / priorities
 html
 - gestion img src pour mobile						☐ 4
 - compo images + texte								☐ 5
+- meta description & keywords						☐
+- images
+-- utiliser srcset
+-- refaires images aux dimensions classiques
+---  320px											☐	//  320w
+---  640px											☐	//  640w
+---  960px											☐	//  960w
+--- 1280px											☐	// 1280w
 
 js
 -- minifier & uglyfier								☐
@@ -113,7 +126,9 @@ sass
 - font inclusions, manage font styles imports		☐
 -- ex: _fonts.scss > -LightItalic ; use array
 
-
+Final check
+- w3c												☐
+- pagespeed											☐
 
 
 ##### TODO DONE
