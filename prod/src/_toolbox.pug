@@ -31,6 +31,22 @@ hr
 h2 Images
 p Here's image management, with most use cases.
 
+h3 Simple Image
+
+// TODO / faire une fonction pour générer src set, avec tab formats [320, 640, 960, 1280]
+
+- var imgname 	= 'example';
+- var imgsrc 	= 'assets/visuals/images/tests/';
+- var imgext 	= '.jpg';
+img(	alt='Kabalite warrior, Dark eldar drukhari, color scheme white and red'
+		height='851'
+		src=imgsrc + imgname + imgext
+		srcset=imgsrc + imgname + '-320' + imgext + ' 320w, ' + imgsrc + imgname + '-640' + imgext + ' 640w,  ' + imgsrc + imgname + '-960' + imgext + ' 960w, ' + imgsrc + imgname  + imgext + ' 1280w'
+		title='Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
+		width='1280'
+)
+
+
 hr
 
 h2 Lists
