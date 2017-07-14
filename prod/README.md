@@ -102,6 +102,7 @@ misc
 -- Basic images management							✔  
 -- Advanced images management						☐  2
 -- containers / grid management						✔ 
+////////////////////////////////////////////////////////// TODO Virer marges gauches & droites containers internes
 
 - 404												☐
 - google analytics									☐

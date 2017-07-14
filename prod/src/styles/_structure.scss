@@ -38,22 +38,32 @@ a {
 	}
 }
 
+// forms
+fieldset {
+
+	td {
+		padding: 5px;
+	}
+}
+
 // separator
 hr {
 	border-bottom: 1px solid $color-third;
 	margin: 2em 0;
 }
 
-// forms
+// images
+img {
+	height: auto;
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+}
+
 legend {
 	padding: 0 .5em;
 	margin: 0 1em;
 }
-
-fieldset td {
-	padding: 5px;
-}
-
 
 
 
