@@ -1,16 +1,16 @@
 //// Manage import order for scss files
 
+@import 'variables';
+
 // Ext
 @import "normalize";
 @import 'bourbon';
 @import "neat";
 
 // Mine
-@import 'variables';
 @import 'functions';
 
 @import 'mixins';
-@import 'mixins-project';
 
 @import 'fonts';
 
