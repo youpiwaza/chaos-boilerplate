@@ -1,6 +1,4 @@
-# Warhammer 40.000 _ Dark eldars / Drukhari Blog
-
-
+# Chaos boilerplate
 
 
 
@@ -20,7 +18,7 @@ npm
 
 ##### Main ressources locations
 html (pugjs) 										> /src & src/templates
-css (sass & bourbon)								> /src/styles
+css (sass & bourbon)								> /src/styles/base
 js													> src/scripts
 
 
@@ -91,7 +89,7 @@ Nah / ✘
 
 
 misc										 status / priorities
-- recup bases mah-skeleton 							✅ 3
+- recup bases mah-skeleton 							✔
 - recup bases chaos		 							✅ 3
 - page toolbox										✅ 2
 -- créer variables de bases (colors, fonts, etc.)	✅  // check bases bourbon / neat
@@ -102,6 +100,9 @@ misc										 status / priorities
 - google analytics									☐
 - proper # markdown
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
+
+dev Env
+- linters											☐
 
 html
 - compo images + texte								☐ 5
