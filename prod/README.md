@@ -95,29 +95,22 @@ misc										 status / priorities
 - recup bases chaos		 							✅ 3
 - page toolbox										✅ 2
 -- créer variables de bases (colors, fonts, etc.)	✅  // check bases bourbon / neat
--- Images management
--- containers management
+-- Images management								✔
+-- containers management							✅
 
 - 404												☐
-- vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 - google analytics									☐
 - proper # markdown
+- vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 
 html
-- gestion img src pour mobile						☐ 4
 - compo images + texte								☐ 5
 - meta description & keywords						☐
-- images
--- utiliser srcset
--- refaires images aux dimensions classiques
----  320px											☐	//  320w
----  640px											☐	//  640w
----  960px											☐	//  960w
---- 1280px											☐	// 1280w
+
 
 js
--- minifier & uglyfier								☐
--- browsersync link									☐
+- browsersync link									☐
+- minifier & uglyfier								☐
 - gestion FOUC										☐
 
 sass
@@ -125,29 +118,42 @@ sass
 - mixins											☐
 - font inclusions, manage font styles imports		☐
 -- ex: _fonts.scss > -LightItalic ; use array
+- toolbox page style 								☐
 
 Final check
-- w3c												☐
 - pagespeed											☐
+- w3c												☐
+
 
 
 ##### TODO DONE
-misc
-- coloration syntaxique pugjs						✔
-- revoir indentation tous (tab 4)					✔
 
 gulp
 - live reload										✔
 -- watch + cache									✔
 
+html
+- images											✔
+-- utiliser srcset									✔
+-- refaires images aux dimensions classiques		✔
+---  320px											☐	//  320w
+---  640px											☐	//  640w
+---  960px											☐	//  960w
+--- 1280px											☐	// 1280w
+- gestion img src pour mobile						✔
+
 js
 - basic js files									✔
 - jQuery											✔
+
+misc
+- coloration syntaxique pugjs						✔
+- revoir indentation tous (tab 4)					✔
 
 sass
 - bourbon & co										✔
 -- bourbon											✔
 -- neat												✔
--- refills											✘
+-- refills											✘ // unavailable to npm for now >.>
 - Modernizr, Normalize.css 							✔
 - normalize (ci besoin ek bourbon)					✔

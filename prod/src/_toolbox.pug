@@ -1,11 +1,13 @@
 include templates/_vars.pug
+include templates/_mixins.pug
 
-- var pageName = "Toolboi"
+- var imgsrc 	= imgsrc + 'tests/'
+- var pageName 	= "Toolbox"
 
 include templates/_html-header.pug
 
-h1 "Chaos" toolboi
-p This page allw a display of all the elements included in the template, in order to control the proper looks and display of your website.
+h1 "Chaos" toolbox
+p This page allow a display of all the elements included in the template, in order to control the proper looks and display of your website.
 p Don't hesitate to add your own elements in order to test them ;)
 
 hr
@@ -22,9 +24,12 @@ h2 Headings
 hr
 
 h2 Paragraph
-p Lorem ipsum dolor sit amet, <a href="#" title="Just a test link :D">test link</a> adipiscing elit. <strong>Bold test</strong> nullam dignissim convallis est. <em>Italic test</em> Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+p Lorem ipsum dolor sit amet,  adipiscing elit.  nullam dignissim convallis est.  Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
 
-p Lorem ipsum dolor sit amet, emphasis consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+h3 Main paragraphs tags
+p Some text, and some <a href="#" title="Just a test link :D">link</a>, how delightful.
+p Some text, and some <strong>Bold text, using the strong tag</strong>, how surprising.
+p Some text, and some <em>Italic texte, using the em tag</em>, how di how.
 
 hr
 
@@ -32,20 +37,12 @@ h2 Images
 p Here's image management, with most use cases.
 
 h3 Simple Image
+p uses pugsjs mixins to generate srcset automatically
 
-// TODO / faire une fonction pour générer src set, avec tab formats [320, 640, 960, 1280]
-
-- var imgname 	= 'example';
-- var imgsrc 	= 'assets/visuals/images/tests/';
-- var imgext 	= '.jpg';
-img(	alt='Kabalite warrior, Dark eldar drukhari, color scheme white and red'
-		height='851'
-		src=imgsrc + imgname + imgext
-		srcset=imgsrc + imgname + '-320' + imgext + ' 320w, ' + imgsrc + imgname + '-640' + imgext + ' 640w,  ' + imgsrc + imgname + '-960' + imgext + ' 960w, ' + imgsrc + imgname  + imgext + ' 1280w'
-		title='Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
-		width='1280'
-)
-
+- var imageAlt = 'Kabalite warrior, Dark eldar drukhari, color scheme white and red'
+- var imageTitle = 'Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
+//- See templates/_mixins.pug
++imgResponsive('example', imageAlt, imageTitle)
 
 hr
 

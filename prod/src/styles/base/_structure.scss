@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @for $i from 1 through 6 {
 	h#{$i} {
-		font-size: 3.5em - $i * .3;
+		font-size: 4em - $i * .4;
 	}
 }
 
@@ -49,4 +49,7 @@ legend {
 	margin: 0 1em;
 }
 
+fieldset td {
+	padding: 5px;
+}
 /// Simple classes
