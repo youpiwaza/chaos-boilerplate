@@ -2,10 +2,11 @@
 
 
 
-##### Basic commands
+## Main commands
 
 gulp
 - gulp												/ Default / Compile html (pugjs)
+- gulp w											/ Watch for html, sass & js changes to compile. Update browser
 - gulp test											/ Default / Compile stuff in /tests
 
 npm
@@ -13,17 +14,19 @@ npm
 -- install dev package								/ > npm i -D <package_name>
 - update 											/ > npm install npm@latest -g
 - update packages 									/ > npm update
+- Deduplicate dependancies							/ > npm dedupe
+- Check if everything is up to date // should return nothing / > npm outdated
 
 
 
-##### Main ressources locations
+## Main ressources locations
 html (pugjs) 										> /src & src/templates
 css (sass & bourbon)								> /src/styles/base
 js													> src/scripts
 
 
 
-##### Techno used
+## Techno used
 - node												/ https://nodejs.org/en/
 - npm												/ https://www.npmjs.com/
 - gulp												/ http://gulpjs.com/
@@ -56,14 +59,17 @@ js													> src/scripts
 
 
 
-##### Links refs. / Thanks
-gulp
-- TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
-
+### Links refs. / Thanks
 folder / files / misc
 - editor config										/ http://editorconfig.org/
 - git attributes 									/ https://git-scm.com/docs/gitattributes
 - modernizr											/ https://modernizr.com/
+
+git horsesh*t
+- https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+
+gulp
+- TODO / Clean gulpfile.js & dedicated tasks files 	/ https://makina-corpus.com/blog/metier/2015/make-your-gulp-modular
 
 html
 - font-icons
@@ -74,12 +80,12 @@ optimisation
 - best practices									/ https://www.webpagefx.com/blog/web-design/20-html-best-practices-you-should-follow/
 - images src set									/ https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html
 
-git horsesh*t
-- https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+sass
+- Atomic / CSS conventions
+- Smaccs / CSS conventions
 
 
-
-##### TODO
+### TODO
 Legend:
 Todo / ☐
 WIP / ✅
@@ -88,24 +94,27 @@ Love yah / ❤
 Nah / ✘
 
 
-misc										 status / priorities
-- recup bases mah-skeleton 							✔
-- recup bases chaos		 							✅ 3
-- page toolbox										✅ 2
--- créer variables de bases (colors, fonts, etc.)	✅  // check bases bourbon / neat
--- Images management								✔
--- containers management							✅
+
+.											  status / priorities
+misc
+- page toolbox										✅  1
+-- créer variables de bases (colors, fonts, etc.)	✅  1.1 // check bases bourbon / neat
+-- Basic images management							✔  
+-- Advanced images management						☐  1.3
+-- containers management							☐  1.2
 
 - 404												☐
 - google analytics									☐
-- proper # markdown
+
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
+
 
 dev Env
 - linters											☐
 
+
 html
-- compo images + texte								☐ 5
+- compo images + texte								☐ ❤
 - meta description & keywords						☐
 
 
@@ -113,21 +122,34 @@ js
 - browsersync link									☐
 - minifier & uglyfier								☐
 - gestion FOUC										☐
+- Usual librairies 									☐
+-- Hammer.js / Touch events 						☐
+-- Select / radio / etc. normalizers 				☐
+- set up conventions								☐
+-- http://www.ecma-international.org/ecma-262/6.0/	☐
+-- https://github.com/feross/standard				☐
+-- https://github.com/airbnb/javascript				☐
+
 
 sass
 - breakpoints responsive							☐
 - mixins											☐
+-- media queries
+
 - font inclusions, manage font styles imports		☐
 -- ex: _fonts.scss > -LightItalic ; use array
+
 - toolbox page style 								☐
 
+
 Final check
+- documentation										☐
 - pagespeed											☐
 - w3c												☐
 
 
 
-##### TODO DONE
+#### TODO DONE
 
 gulp
 - live reload										✔
@@ -148,8 +170,11 @@ js
 - jQuery											✔
 
 misc
+- recup bases mah-skeleton 							✔
 - coloration syntaxique pugjs						✔
+- recup bases chaos		 							✔
 - revoir indentation tous (tab 4)					✔
+- proper # markdown									~
 
 sass
 - bourbon & co										✔
