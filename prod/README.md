@@ -90,18 +90,18 @@ Legend:
 Todo / ☐
 WIP / ✅
 Done / ✔
-Love yah / ❤
+Love yah / soon / ❤
 Nah / ✘
 
 
 
 .											  status / priorities
 misc
-- page toolbox										✅  1
--- créer variables de bases (colors, fonts, etc.)	✅  1.1 // check bases bourbon / neat
+- page toolbox										☐  
+-- créer variables de bases (colors, fonts, etc.)	☐ 
 -- Basic images management							✔  
--- Advanced images management						☐  1.3
--- containers management							☐  1.2
+-- Advanced images management						☐  3
+-- containers management							✅  1
 
 - 404												☐
 - google analytics									☐
@@ -114,14 +114,14 @@ dev Env
 
 
 html
-- compo images + texte								☐ ❤
+- compo images + texte								☐ 4
 - meta description & keywords						☐
 
 
 js
 - browsersync link									☐
 - minifier & uglyfier								☐
-- gestion FOUC										☐
+- gestion FOUC	in & out							☐
 - Usual librairies 									☐
 -- Hammer.js / Touch events 						☐
 -- Select / radio / etc. normalizers 				☐
@@ -133,7 +133,7 @@ js
 
 sass
 - breakpoints responsive							☐
-- mixins											☐
+- mixins											☐ 3
 -- media queries
 
 - font inclusions, manage font styles imports		☐
