@@ -1,15 +1,22 @@
 //// Variable stylesheet
-/// Place here all you variables (grid, responsive sizes, color, etc.)
+// Place here all you variables (grid, responsive sizes, color, etc.)
 
-// Colors
-$color-primary:   #c0dfd9;
-$color-secondary: #e9ece5;
-$color-third:     #b3c2bf;
-$color-fourth:    #3b3a36;
-$color-error:     #d33;
+/// Colors
+$color-primary:  			#c0dfd9;
+$color-secondary: 			#e9ece5;
+$color-third:    			#b3c2bf;
+$color-fourth:   			#3b3a36;
+$color-error:    			#d33;
+
 
 
 /// Fonts
-$fontText: 		'Montserrat';
-$fontTitle: 	'Merriweather';
-$fontsPath: 	'../../assets/fonts/';
+$fontText: 					'Montserrat';
+$fontTitle: 				'Merriweather';
+$fontsPath: 				'../../assets/fonts/';
+
+
+
+/// Grid stuff
+$containerMaxWidth:			100em; // ~1600px
+$responsiveBreakpoint:		60em; // ~1000px // manage only one for now

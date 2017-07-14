@@ -100,13 +100,13 @@ misc
 - page toolbox										☐  
 -- créer variables de bases (colors, fonts, etc.)	☐ 
 -- Basic images management							✔  
--- Advanced images management						☐  3
--- containers management							✅  1
+-- Advanced images management						☐  2
+-- containers / grid management						✔ 
 
 - 404												☐
 - google analytics									☐
-
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
+- multi linguisme									☐
 
 
 dev Env
@@ -140,12 +140,14 @@ sass
 -- ex: _fonts.scss > -LightItalic ; use array
 
 - toolbox page style 								☐
+-- listes puces custom fa
 
 
 Final check
 - documentation										☐
 - pagespeed											☐
 - w3c												☐
+
 
 
 
@@ -183,3 +185,4 @@ sass
 -- refills											✘ // unavailable to npm for now >.>
 - Modernizr, Normalize.css 							✔
 - normalize (ci besoin ek bourbon)					✔
+

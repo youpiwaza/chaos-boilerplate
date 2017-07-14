@@ -6,182 +6,253 @@ include templates/_mixins.pug
 
 include templates/_html-header.pug
 
-h1 "Chaos" toolbox
-p This page allow a display of all the elements included in the template, in order to control the proper looks and display of your website.
-p Don't hesitate to add your own elements in order to test them ;)
-
-hr
-
-h2 Headings
-.titles 
-	h1 h1 title
-	h2 h2 title
-	h3 h3 title
-	h4 h4 title
-	h5 h5 title
-	h6 h6 title
-
-hr
-
-h2 Paragraph
-p Lorem ipsum dolor sit amet,  adipiscing elit.  nullam dignissim convallis est.  Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-
-h3 Main paragraphs tags
-p Some text, and some <a href="#" title="Just a test link :D">link</a>, how delightful.
-p Some text, and some <strong>Bold text, using the strong tag</strong>, how surprising.
-p Some text, and some <em>Italic texte, using the em tag</em>, how di how.
-
-hr
-
-h2 Images
-p Here's image management, with most use cases.
-
-h3 Simple Image
-p uses pugsjs mixins to generate srcset automatically
-
-- var imageAlt = 'Kabalite warrior, Dark eldar drukhari, color scheme white and red'
-- var imageTitle = 'Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
-//- See templates/_mixins.pug
-+imgResponsive('example', imageAlt, imageTitle)
-
-hr
-
-h2 Lists
-h3 Definition List
-dl
-	dt Definition List Title
-	dd This is a definition list division.
-	dd This is a second definition list division.
 
 
-h3 Ordered List
-ol
-	- for (var i = 1; i <= 3; i++)
-		li= "item " + i
+main(role='main')
+	section.container
+		article.column-full
+			h1 "Chaos" toolbox
+			p This page allow a display of all the elements included in the template, in order to control the proper looks and display of your website.
+			p Don't hesitate to add your own elements in order to test them ;)
 
-h3 Unordered List
-ul
-	- for (var i = 1; i <= 3; i++)
-		li= "item " + i
+			hr
+	
 
-h3 Stacked List
-ul
-	- for (var i = 1; i <= 2; i++)
-		li= "item " + i
+
+		article.column-full
+			h2 Headings
+			.titles 
+				h1 h1 title
+				h2 h2 title
+				h3 h3 title
+				h4 h4 title
+				h5 h5 title
+				h6 h6 title
+
+			hr
+	
+
+
+		article.column-full
+			h2 Paragraph
+			p Lorem ipsum dolor sit amet,  adipiscing elit.  nullam dignissim convallis est.  Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+
+			h3 Main paragraphs tags
+			p Some text, and some <a href="#" title="Just a test link :D">link</a>, how delightful.
+			p Some text, and some <strong>Bold text, using the strong tag</strong>, how surprising.
+			p Some text, and some <em>Italic texte, using the em tag</em>, how di how.
+
+			hr
+	
+
+
+		article.column-full
+			h2 Images
+			p Here's image management, with most use cases.
+
+			h3 Simple Image
+			p uses pugsjs mixins to generate srcset automatically
+
+			- var imageAlt = 'Kabalite warrior, Dark eldar drukhari, color scheme white and red'
+			- var imageTitle = 'Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
+			//- See templates/_mixins.pug
+			+imgResponsive('example', imageAlt, imageTitle)
+
+			hr
+	
+
+
+		article.column-full
+			h2 Lists
+			h3 Definition List
+			dl
+				dt Definition List Title
+				dd This is a definition list division.
+				dd This is a second definition list division.
+
+
+			h3 Ordered List
+			ol
+				- for (var i = 1; i <= 3; i++)
+					li= "item " + i
+
+			h3 Unordered List
 			ul
-				- for (var j = 1; j <= 2; j++)
-					li= "sub-item " + j
+				- for (var i = 1; i <= 3; i++)
+					li= "item " + i
 
-hr
+			h3 Stacked List
+			ul
+				- for (var i = 1; i <= 2; i++)
+					li= "item " + i
+						ul
+							- for (var j = 1; j <= 2; j++)
+								li= "sub-item " + j
 
-h2 Fieldsets and form elements
-p Form elements displayed in a table, in order to have proper alignement between labels and inputs.
+			hr
+	
 
-form
-	fieldset
-		legend My legend
 
-		table
-			tr
-				td
-					label(for='exampleTextId') Example text : 
-				td
-					input(id='exampleTextId' name='exampleText' type='text' placeholder='Firstname')
+		article.column-full
+			h2 Fieldsets and form elements
+			p Form elements displayed in a table, in order to have proper alignement between labels and inputs.
 
-			tr
-				td
-					label(for='exampleTextAreaId') Example textarea : 
-				td
-					textarea(id='exampleTextAreaId' name='exampleTextArea' placeholder='Your message here')
+			form
+				fieldset
+					legend My legend
+
+					table
+						tr
+							td
+								label(for='exampleTextId') Example text : 
+							td
+								input(id='exampleTextId' name='exampleText' type='text' placeholder='Firstname')
+
+						tr
+							td
+								label(for='exampleTextAreaId') Example textarea : 
+							td
+								textarea(id='exampleTextAreaId' name='exampleTextArea' placeholder='Your message here')
+						
+						tr
+							td
+								label(for='exampleSelectId') Example select : 
+							td
+								select(id='exampleSelectId' name='exampleSelect')
+									- for (var i = 1; i <= 2; i++)
+										optgroup(label='Option group ' + i)
+											- for (var j = 1; j <= 3; j++)
+												option(value=j)= 'Option ' + j
+
+						tr
+							td
+								label(for='exampleTextAreaId') Example radios without fieldset :
+							td
+								- for (var i = 1; i <= 3; i++)
+										label(for='exampleRadiosFId'+i)= 'item ' + i
+										input(id='exampleRadiosFId'+i name='exampleRadiosF' type='radio' value='value'+i)
+
+						tr
+							td
+								fieldset(id='exampleRadiosH')
+									legend Example radios fieldset horizontal
+									- for (var i = 1; i <= 3; i++)
+										label(for='exampleRadiosHId'+i)= 'item ' + i
+										input(id='exampleRadiosHId'+i name='exampleRadiosH' type='radio' value='value'+i)
+
+						tr
+							td
+								fieldset(id='exampleRadiosV')
+									legend Example radios fieldset vertical
+									- for (var i = 1; i <= 3; i++)
+										label(for='exampleRadiosVId'+i)= 'item ' + i
+										input(id='exampleRadiosVId'+i name='exampleRadiosV' type='radio' value='value'+i)
+
+						tr
+							td
+								label(for='exampleCheckboxes') Example checkboxes horizontal :
+							td
+								- for (var i = 1; i <= 3; i++)
+										label(for='exampleCheckboxesHId'+i)= 'item ' + i
+										input(id='exampleCheckboxesHId'+i name='exampleCheckboxesH' type='checkbox' value='value'+i)
+
+						tr
+							td
+								label(for='exampleCheckboxes') Example checkboxes vertical :
+							td
+								- for (var i = 1; i <= 3; i++)
+										label(for='exampleCheckboxesVId'+i)= 'item ' + i
+										input(id='exampleCheckboxesVId'+i name='exampleCheckboxesV' type='checkbox' value='value'+i)
+
+						tr
+							td
+								label(for='passwordId') Password : 
+							td
+								input(id='passwordId' name='password' type='password' placeholder='')
+
+						tr
+							td
+								label(for='fileId') File : 
+							td
+								input(id='fileId' name='file' type='file' placeholder='')
+
+						tr
+							td
+								input(id='submitId' name='submit' type='submit' value='Submit label')
+
+						tr
+							td
+								button(id='submitButtonId' name='submitButton' type='submit') Submit button label
+
+			hr
+	
+
+
+		article.column-full
+			h2 Tables
+			p Classic tables stuff
+
+			table
+				- for (var i = 1; i <= 4; i++)
+					tr
+						- for (var j = 1; j <= 3; j++)
+							if i == 1
+								th= 'Tablea heading ' + j
+							else
+								td= 'Table content ' + (i-1) + ':' + j
+
+			hr
+	
+
+
+		article.column-full
+			h2 Containers & grid
+			p Neat stuff tests & examples
 			
-			tr
-				td
-					label(for='exampleSelectId') Example select : 
-				td
-					select(id='exampleSelectId' name='exampleSelect')
-						- for (var i = 1; i <= 2; i++)
-							optgroup(label='Option group ' + i)
-								- for (var j = 1; j <= 3; j++)
-									option(value=j)= 'Option ' + j
+			h3 2 columns, width 6
+			.column-6.testColor-1.testContainer
+				p Colonne 1
+			.column-6.testColor-2.testContainer
+				p Colonne 2
+		
+		article.column-full
+			h3 2 columns, width 8 & 4
+			.column-8.testColor-2.testContainer
+				p Colonne 1
+			.column-4.testColor-1.testContainer
+				p Colonne 2
 
-			tr
-				td
-					label(for='exampleTextAreaId') Example radios without fieldset :
-				td
-					- for (var i = 1; i <= 3; i++)
-							label(for='exampleRadiosFId'+i)= 'item ' + i
-							input(id='exampleRadiosFId'+i name='exampleRadiosF' type='radio' value='value'+i)
+		article.column-full
+			h3 2 columns, width 9 & 3
+			.column-9.testColor-1.testContainer
+				p Colonne 1
+			.column-3.testColor-2.testContainer
+				p Colonne 2
+		
+		article.column-full
+			h3 3 columns, width 4
+			.column-4.testColor-1.testContainer
+				p Colonne 1
+			.column-4.testColor-2.testContainer
+				p Colonne 2
+			.column-4.testColor-1.testContainer
+				p Colonne 3
+		
+		article.column-full
+			h3 4 columns, width 3
+			.column-3.testColor-2.testContainer
+				p Colonne 1
+			.column-3.testColor-1.testContainer
+				p Colonne 2
+			.column-3.testColor-2.testContainer
+				p Colonne 3
+			.column-3.testColor-1.testContainer
+				p Colonne 4
+		
 
-			tr
-				td
-					fieldset(id='exampleRadiosH')
-						legend Example radios fieldset horizontal
-						- for (var i = 1; i <= 3; i++)
-							label(for='exampleRadiosHId'+i)= 'item ' + i
-							input(id='exampleRadiosHId'+i name='exampleRadiosH' type='radio' value='value'+i)
-
-			tr
-				td
-					fieldset(id='exampleRadiosV')
-						legend Example radios fieldset vertical
-						- for (var i = 1; i <= 3; i++)
-							label(for='exampleRadiosVId'+i)= 'item ' + i
-							input(id='exampleRadiosVId'+i name='exampleRadiosV' type='radio' value='value'+i)
-
-			tr
-				td
-					label(for='exampleCheckboxes') Example checkboxes horizontal :
-				td
-					- for (var i = 1; i <= 3; i++)
-							label(for='exampleCheckboxesHId'+i)= 'item ' + i
-							input(id='exampleCheckboxesHId'+i name='exampleCheckboxesH' type='checkbox' value='value'+i)
-
-			tr
-				td
-					label(for='exampleCheckboxes') Example checkboxes vertical :
-				td
-					- for (var i = 1; i <= 3; i++)
-							label(for='exampleCheckboxesVId'+i)= 'item ' + i
-							input(id='exampleCheckboxesVId'+i name='exampleCheckboxesV' type='checkbox' value='value'+i)
-
-			tr
-				td
-					label(for='passwordId') Password : 
-				td
-					input(id='passwordId' name='password' type='password' placeholder='')
-
-			tr
-				td
-					label(for='fileId') File : 
-				td
-					input(id='fileId' name='file' type='file' placeholder='')
-
-			tr
-				td
-					input(id='submitId' name='submit' type='submit' value='Submit label')
-
-			tr
-				td
-					button(id='submitButtonId' name='submitButton' type='submit') Submit button label
-
-hr
-
-h2 Tables
-p Classic tables stuff
-
-table
-	- for (var i = 1; i <= 4; i++)
-		tr
-			- for (var j = 1; j <= 3; j++)
-				if i == 1
-					th= 'Tablea heading ' + j
-				else
-					td= 'Table content ' + (i-1) + ':' + j
-
-
-
-
-
+			
+		article.column-full
+			hr
 
 
 

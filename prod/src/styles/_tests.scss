@@ -4,6 +4,22 @@
 @import "neat";
 
 
+
+// Basic stuff for tests
+.testColor-1 {
+	background-color: darken($color-primary, 10%);
+}
+.testColor-2 {
+	background-color: darken($color-primary, 20%);
+}
+.testContainer {
+	align-items: center;
+	display: flex;
+	height: 20em;
+	justify-content: center;
+}
+
+
 // Neat tests
 .test-single-column {
 	background-color: red;
