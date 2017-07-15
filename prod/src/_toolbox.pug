@@ -1,10 +1,10 @@
-include templates/_vars.pug
-include templates/_mixins.pug
+include templates/_vars
+include templates/_mixins
 
 - var imgsrc 	= imgsrc + 'tests/'
 - var pageName 	= "Toolbox"
 
-include templates/_html-header.pug
+include templates/_html-header
 
 
 
@@ -53,10 +53,11 @@ main(role='main')
 			h3 Simple Image
 			p uses pugsjs mixins to generate srcset automatically
 
-			- var imageAlt = 'Kabalite warrior, Dark eldar drukhari, color scheme white and red'
-			- var imageTitle = 'Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
+			- var imageAlt 			= 'Kabalite warrior, Dark eldar drukhari, color scheme white and red'
+			- var imageFileName 	= 'example'
+			- var imageTitle 		= 'Kabalite warrior, from dark eldar kabalite warrior. Equipped with splinter rifle'
 			//- See templates/_mixins.pug
-			+imgResponsive('example', imageAlt, imageTitle)
+			+imgResponsive(imageFileName, imageAlt, imageTitle)
 	
 
 
@@ -253,12 +254,14 @@ main(role='main')
 			hr
 
 
+		
 
+		/////////////////////////////////////////////////////////////////////////////// TODO / Remplacer ca par blocks / extends
 		article.column-full.removePaddings
 			h3 Image & text layouts
 			.imageAndtextContainer
 				.column-9.imageLeft
-					+imgResponsive('example', imageAlt, imageTitle)
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
 				.imageText
 					h4 Image & text (9/3)
 					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
@@ -267,7 +270,7 @@ main(role='main')
 		article.column-full.removePaddings
 			.imageAndtextContainer
 				.column-8.imageRight
-					+imgResponsive('example', imageAlt, imageTitle)
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
 				.imageText
 					h4 Text & Image (4/8)
 					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
@@ -275,15 +278,33 @@ main(role='main')
 		article.column-full.removePaddings
 			.imageAndtextContainer
 				.column-9.imageLeft
-					+imgResponsive('example', imageAlt, imageTitle)
-					+imgResponsive('example', imageAlt, imageTitle)
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
 				.imageText
-					h4 Dual images
+					h4 Multiple images in a column
 					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
+		
+
+		article.column-full.removePaddings.dualImages
+			h3 Dual images
+			.dualImages
+				.column-6
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
+				.column-6
+					+imgResponsive(imageFileName, imageAlt, imageTitle)
+			.imageText
+				h4 Side by side images
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint cupiditate, voluptatem nihil qui aspernatur, nulla necessitatibus a obcaecati repellat! Explicabo molestiae iure, quasi, neque ex unde tempore quod necessitatibus provident nemo eius similique, optio nostrum animi recusandae repellendus exercitationem illo nulla beatae odio hic nihil perferendis minus dolores? Natus, consectetur.
+
 
 		article.column-full
 			hr
 
+		article.column-full.removePaddings
+			h3 test block & extends
 
+		- var content 	= "My content yay fun"
+		- var title 	= "Mah title"
+		include templates/imageTextLeft
 
-include templates/_html-footer.pug
+include templates/_html-footer

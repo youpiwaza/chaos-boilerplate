@@ -44,7 +44,7 @@
 }
 .imageText {
 	padding: 0 1rem 1rem 1rem;
-	
+
 	P {
 		text-align: justify;
 	}
@@ -53,5 +53,25 @@
 		padding-left: 0;
 		padding-right: 0;
 
+	}
+}
+
+.dualImages {
+	& .column-6:first-of-type {
+		margin-left: 0;
+	}
+	// & .column-6:last-of-type { // ko on class names -_-
+	& .column-6 {
+		margin-bottom: 1rem;
+		
+		@media screen and (min-width: $responsiveBreakpointSmall) {
+			width: calc(50%);
+		}
+
+
+		@media screen and (min-width: $responsiveBreakpoint) {
+			width: calc(50% - 1rem);
+
+		}
 	}
 }

@@ -1,0 +1,10 @@
+//- Need defined variables before include : content, imageFileName, imageAlt, imageTitle
+//- title is optionnal
+article.column-full.removePaddings
+	.imageAndtextContainer
+		.column-9.imageLeft
+			+imgResponsive(imageFileName, imageAlt, imageTitle)
+		.imageText
+			if title
+				h4= title
+			p= content

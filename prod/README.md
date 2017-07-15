@@ -97,12 +97,8 @@ Nah / ✘
 
 .											  status / priorities
 misc
-- page toolbox										☐  
--- créer variables de bases (colors, fonts, etc.)	☐ 
--- Basic images management							✔  
--- Advanced images management						☐  2
--- containers / grid management						✔ 
-////////////////////////////////////////////////////////// TODO Virer marges gauches & droites containers internes
+- page toolbox										☐
+-- Styles de base 									☐
 
 - 404												☐
 - google analytics									☐
@@ -114,8 +110,9 @@ dev Env
 - linters											☐
 
 
-html
-- compo images + texte								☐ 4
+html / pug
+- compo images + texte								✔ // Cleaner shame.scss
+-- remplacer include par blocks / extend			☐ ❤ // cf. imageTextLeft.pug
 - meta description & keywords						☐
 
 
@@ -133,8 +130,9 @@ js
 
 
 sass
-- breakpoints responsive							☐
-- mixins											☐ 3
+- breakpoints responsive							☐ ❤ // revoir, cleaner
+- créer variables de bases (colors, fonts, etc.)	☐ ❤
+- mixins											☐ ❤
 -- media queries
 
 - font inclusions, manage font styles imports		☐
@@ -162,10 +160,10 @@ html
 - images											✔
 -- utiliser srcset									✔
 -- refaires images aux dimensions classiques		✔
----  320px											☐	//  320w
----  640px											☐	//  640w
----  960px											☐	//  960w
---- 1280px											☐	// 1280w
+---  320px											✔	//  320w
+---  640px											✔	//  640w
+---  960px											✔	//  960w
+--- 1280px											✔	// 1280w
 - gestion img src pour mobile						✔
 
 js
@@ -178,6 +176,10 @@ misc
 - recup bases chaos		 							✔
 - revoir indentation tous (tab 4)					✔
 - proper # markdown									~
+- page toolbox										  
+-- Basic images management							✔  
+-- Advanced images management						✔ 
+-- containers / grid management						✔ 
 
 sass
 - bourbon & co										✔
