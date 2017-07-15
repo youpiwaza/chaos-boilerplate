@@ -208,44 +208,44 @@ main(role='main')
 			p Neat stuff tests & examples
 			
 			h3 2 columns, width 6
-			.column-6.testColor-1.testContainer
-				p Colonne 1
-			.column-6.testColor-2.testContainer
-				p Colonne 2
+		.column-6.testColor-1.testContainer
+			p Colonne 1
+		.column-6.testColor-2.testContainer
+			p Colonne 2
 		
 		article.column-full
 			h3 2 columns, width 8 & 4
-			.column-8.testColor-2.testContainer
-				p Colonne 1
-			.column-4.testColor-1.testContainer
-				p Colonne 2
+		.column-8.testColor-2.testContainer
+			p Colonne 1
+		.column-4.testColor-1.testContainer
+			p Colonne 2
 
 		article.column-full
 			h3 2 columns, width 9 & 3
-			.column-9.testColor-1.testContainer
-				p Colonne 1
-			.column-3.testColor-2.testContainer
-				p Colonne 2
+		.column-9.testColor-1.testContainer
+			p Colonne 1
+		.column-3.testColor-2.testContainer
+			p Colonne 2
 		
 		article.column-full
 			h3 3 columns, width 4
-			.column-4.testColor-1.testContainer
-				p Colonne 1
-			.column-4.testColor-2.testContainer
-				p Colonne 2
-			.column-4.testColor-1.testContainer
-				p Colonne 3
+		.column-4.testColor-1.testContainer
+			p Colonne 1
+		.column-4.testColor-2.testContainer
+			p Colonne 2
+		.column-4.testColor-1.testContainer
+			p Colonne 3
 		
 		article.column-full
 			h3 4 columns, width 3
-			.column-3.testColor-2.testContainer
-				p Colonne 1
-			.column-3.testColor-1.testContainer
-				p Colonne 2
-			.column-3.testColor-2.testContainer
-				p Colonne 3
-			.column-3.testColor-1.testContainer
-				p Colonne 4
+		.column-3.testColor-2.testContainer
+			p Colonne 1
+		.column-3.testColor-1.testContainer
+			p Colonne 2
+		.column-3.testColor-2.testContainer
+			p Colonne 3
+		.column-3.testColor-1.testContainer
+			p Colonne 4
 		
 
 			
@@ -254,34 +254,33 @@ main(role='main')
 
 
 
-
-
-
-
-		////////////////////////////////////////////////////////// TODO Virer marges gauches & droites containers internes
-		////////////////////////////////////////////////////////// Grilles KO need habillage de teste pour résolutions 1000 < x < 1200
-
-
-
-
-
-
-
-		article.column-full
+		article.column-full.removePaddings
 			h3 Image & text layouts
-			.column-9
-				+imgResponsive('example', imageAlt, imageTitle)
-			.column-3
-				h4 Image & text (9/3)
-				p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas.
+			.imageAndtextContainer
+				.column-9.imageLeft
+					+imgResponsive('example', imageAlt, imageTitle)
+				.imageText
+					h4 Image & text (9/3)
+					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
 
-		article.column-full
-			.column-4
-				h4 Text & Image (4/8)
-				p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas.
-			.column-8
-				+imgResponsive('example', imageAlt, imageTitle)
+
+		article.column-full.removePaddings
+			.imageAndtextContainer
+				.column-8.imageRight
+					+imgResponsive('example', imageAlt, imageTitle)
+				.imageText
+					h4 Text & Image (4/8)
+					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
 		
+		article.column-full.removePaddings
+			.imageAndtextContainer
+				.column-9.imageLeft
+					+imgResponsive('example', imageAlt, imageTitle)
+					+imgResponsive('example', imageAlt, imageTitle)
+				.imageText
+					h4 Dual images
+					p Dolor sit amet, consectetur adipisicing elit. Non nihil dolorem perferendis sit quis reprehenderit, voluptate deleniti ducimus repellendus, quas quo molestias unde rem blanditiis et. Doloribus voluptates repudiandae vel voluptatum veritatis tempora ducimus eos rem provident repellat magnam vitae, dolorem aperiam ipsum? Libero veritatis adipisci aperiam fuga sunt, tempora eaque vel quos aliquid saepe dolore dolorum sapiente, animi natus minus reiciendis, recusandae tempore magnam, similique architecto dolorem odit. Ducimus, explicabo architecto doloribus praesentium aperiam quis neque debitis, dolore molestias? Similique aliquam sunt enim aperiam cumque adipisci ullam sit repellendus iste officia asperiores quam, alias ut necessitatibus rerum minus aliquid, cupiditate voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eveniet nobis aliquam quam odio quisquam cupiditate dicta recusandae ratione saepe impedit, maxime, earum omnis quia sint. Excepturi aliquid, necessitatibus dolore, ad sint dolorum culpa rem voluptatem eum saepe quas ex ipsum! Alias recusandae est tenetur, voluptates optio, vitae modi consequuntur?
+
 		article.column-full
 			hr
 

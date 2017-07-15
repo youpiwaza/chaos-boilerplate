@@ -2,21 +2,23 @@
 // Place here all you variables (grid, responsive sizes, color, etc.)
 
 /// Colors
-$color-primary:  			#c0dfd9;
-$color-secondary: 			#e9ece5;
-$color-third:    			#b3c2bf;
-$color-fourth:   			#3b3a36;
-$color-error:    			#d33;
+$color-primary:  				#c0dfd9;
+$color-secondary: 				#e9ece5;
+$color-third:    				#b3c2bf;
+$color-fourth:   				#3b3a36;
+$color-error:    				#d33;
 
 
 
 /// Fonts
-$fontText: 					'Montserrat';
-$fontTitle: 				'Merriweather';
-$fontsPath: 				'../../assets/fonts/';
+$fontText: 						'Montserrat';
+$fontTitle: 					'Merriweather';
+$fontsPath: 					'../../assets/fonts/';
 
 
 
 /// Grid stuff
-$containerMaxWidth:			100em; // ~1600px
-$responsiveBreakpoint:		60em; // ~1000px // manage only one for now
+$containerMaxWidth:				100em; // ~1600px
+$responsiveBreakpointSmall:		40em; // ~750px
+$responsiveBreakpoint:			60em; // ~1000px
+$responsiveBreakpointLarge:		80em; // ~1300px

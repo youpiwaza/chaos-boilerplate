@@ -1,4 +1,57 @@
 //// Shame stylesheet
 /// Place here quick fixes, temp styles, etc. in order to separate them, & manage them when you got the time
-/// http://csswizardry.com/2013/04/shame-css/
+/// http://csswizardry.com/201304/shame-css/
 // Called last as folders will be processed first
+
+.column-full {
+	padding: 0 1rem;
+}
+.removePaddings {
+	padding: 0;
+}
+
+/// Image & text container management
+@mixin image {
+	margin-bottom: 1rem;
+}
+.imageLeft {
+	@include image;
+
+	@media screen and (min-width: $responsiveBreakpoint) {
+		margin-left: 0;
+		margin-bottom: .5rem;
+		margin-right: 1rem;
+	}
+	@media screen and (min-width: $responsiveBreakpointLarge) {
+		margin-bottom: 1.5rem;
+		margin-right: 2rem;
+	}
+	
+}
+.imageRight {
+	@include image;
+
+	float: right;
+
+	@media screen and (min-width: $responsiveBreakpoint) {
+		margin-left: 1rem;
+		margin-bottom: .5rem;
+	}
+	@media screen and (min-width: $responsiveBreakpointLarge) {
+		margin-left: 2rem;
+		margin-bottom: 1.5rem;
+	}
+}
+.imageText {
+	padding: 0 1rem 1rem 1rem;
+	
+	P {
+		text-align: justify;
+	}
+
+	@media screen and (min-width: $responsiveBreakpoint) {
+		padding-left: 0;
+		padding-right: 0;
+
+	}
+}

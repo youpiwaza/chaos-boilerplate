@@ -1,5 +1,7 @@
 //// Native elements
-
+* {
+	box-sizing: border-box;
+}
 body {
 	background-color: $color-primary;
 	color: $color-fourth;
@@ -42,7 +44,12 @@ a {
 fieldset {
 
 	td {
+		display: inline-block;
 		padding: 5px;
+
+		@media screen and (min-width: $responsiveBreakpointSmall) {
+			display: table-cell;
+		}
 	}
 }
 
