@@ -6,6 +6,7 @@ body {
 	background-color: $color-primary;
 	color: $color-fourth;
 	font-family: $fontText, sans-serif;
+	hyphens: auto;
 }
 
 // titles
@@ -72,6 +73,9 @@ legend {
 	margin: 0 1em;
 }
 
+p {
+	word-break: break-word;
+}
 
 
 //// Containers
