@@ -140,6 +140,7 @@ sass
 
 - toolbox page style 								☐
 -- listes puces custom fa
+//////////////////////////////////////////////////////////////////////////////Voir pour césures auto
 
 
 Final check
