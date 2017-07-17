@@ -1,0 +1,14 @@
+//- Need defined variables before include : content, imageColumnSize, imageFileName, imageAlt, imageTitle, imageFileName2, imageAlt2, imageTitle2
+//- title is optionnal
+//- imageColumnSize between 1 & 12
+//- imagePosition "Left" or "Right"
+
+article.column-full.removePaddings
+	.imageAndtextContainer
+		div(class='column-' + imageColumnSize + ' image' + imagePosition)
+			+imgResponsive(imageFileName, imageAlt, imageTitle)
+			+imgResponsive(imageFileName2, imageAlt2, imageTitle2)
+		.imageText
+			if title
+				h4= title
+			p= content

@@ -123,7 +123,7 @@ dev Env
 
 html / pug
 - compo images + texte								✔ // Cleaner shame.scss
--- remplacer include par blocks / extend			☐ ❤ // cf. imageTextLeft.pug
+-- remplacer include par blocks / extend			✔
 - meta description & keywords						☐
 
 
