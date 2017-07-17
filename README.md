@@ -5,7 +5,9 @@
 ## Installation
 From command line, after cloning repo
 > npm i
+
 > gulp
+
 > gulp w
 
 Enjoy
