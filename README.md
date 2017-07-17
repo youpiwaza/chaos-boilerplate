@@ -1,5 +1,16 @@
 # Chaos boilerplate
 
+ 
+
+## Installation
+From command line, after cloning repo
+> npm i
+
+> gulp
+
+> gulp w
+
+Enjoy
 
 
 ## Main commands
@@ -140,6 +151,7 @@ sass
 
 - toolbox page style 								☐
 -- listes puces custom fa
+//////////////////////////////////////////////////////////////////////////////Voir pour césures auto
 
 
 Final check
