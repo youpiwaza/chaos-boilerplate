@@ -63,6 +63,7 @@ package-lock.json
 
 # Chaos
 ## Compiled/bundled files
+build/
 *.html
 *.css
 
