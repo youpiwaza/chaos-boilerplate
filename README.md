@@ -60,6 +60,10 @@ js													> src/scripts
 ---- bitters										/ http://bitters.bourbon.io/
 ---- refills										/ http://refills.bourbon.io/
 
+- js
+-- uglifyer											/ https://github.com/mishoo/UglifyJS2 / https://github.com/terinjokes/gulp-uglify
+-- concat											/ https://www.npmjs.com/package/gulp-concat
+
 - sublim text 3 									/ https://www.sublimetext.com/3
 -- emmet 											/ https://emmet.io/blog/sublime-text-3/
 -- package control 									/ https://packagecontrol.io/
@@ -86,10 +90,14 @@ html
 - font-icons
 - multi language BP									/ https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility
 
+js
+- hypens & fouc										/ https://github.com/mnater/Hyphenopoly
+
 optimisation
 - html tips											/ http://www.monitis.com/blog/30-tips-to-optimize-htmlcssimages-for-smooth-web-experience/
 - best practices									/ https://www.webpagefx.com/blog/web-design/20-html-best-practices-you-should-follow/
 - images src set									/ https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html
+- viewport stuff									/ https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
 
 sass
 - Atomic / CSS conventions

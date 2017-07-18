@@ -3,14 +3,16 @@
 var gulp 					= require('gulp'),
 	prefix 					= require('gulp-autoprefixer'),
 	cache 					= require('gulp-cached'),
+	concat  				= require('gulp-concat'),
 	jquery 					= require('gulp-jquery'),
 	minifycss 				= require('gulp-minify-css'),
-	modernizr 				= require('gulp-modernizr');
+	modernizr 				= require('gulp-modernizr'),
 	notify 					= require('gulp-notify'),
 	plumber					= require('gulp-plumber'),
 	pug 					= require('gulp-pug'),
 	sass 					= require('gulp-sass'),
-	sassPartialsImported 	= require('gulp-sass-partials-imported'); // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
+	sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
+	uglify 					= require('gulp-uglify'),
 	util 					= require('gulp-util');
 
 /// other stuff
@@ -40,8 +42,8 @@ var paths = {
 	// scripts
 	scripts: {
 		dest: 				'./build/scripts',
-		jquerySrc: 			'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
-		src: 				'./src/scripts/*'
+		// No basic npm jquery stuff, need to hard copy last version // huehue
+		src: 				['./src/scripts/**/*.js', './node_modules/jquery-custom/jquery.2/dist/jquery.min.js']
 	},
 	
 	src: 					'src/',
@@ -118,22 +120,12 @@ gulp.task('html', function(){
 });
 
 
-// jquery
-gulp.task('jquery', function () {
-	return gulp.src(paths.scripts.jquerySrc)
-		/*
-		.pipe(jquery({
-			flags: ['-deprecated', '-event/alias', '-ajax/script', '-ajax/jsonp', '-exports/global']
-		}))
-		*/
-		.pipe(gulp.dest(paths.scripts.dest));
-});
-
-
 // js
 gulp.task('js', function () {
 	return gulp.src(paths.scripts.src)
 		// .pipe(modernizr()) // activate if needed
+		.pipe(uglify())
+        .pipe(concat('main.js'))
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
