@@ -38,6 +38,23 @@
 			title!= titleText + titleSeparator + pageName
 		else
 			title!= titleText
+		
+		script.
+			var Hyphenopoly = {
+				require: {
+					"en-us": "hyphenation"
+				},
+				paths: {
+					patterndir: 'assets/hyphenopoly/patterns/',
+					maindir: 'assets/hyphenopoly/'
+				},
+				setup: {
+					classnames: {
+						"hyphenate": {}
+					}
+				}
+			};
+		script(src= 'assets/hyphenopoly/Hyphenopoly_Loader.js')
 	</head>
 
 	<body>
