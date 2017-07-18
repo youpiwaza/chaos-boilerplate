@@ -84,7 +84,6 @@ gulp.task('browser-sync', function() {
 
 /// Straight copy of assets
 gulp.task('copy-assets', function() {
-	gulp.start('jquery');
 	return gulp.src(paths.assets.src)
 		.pipe(gulp.dest(paths.assets.dest));
 });
