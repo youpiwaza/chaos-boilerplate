@@ -26,6 +26,7 @@
 		"gulp-autoprefixer": "^4.0.0",
 		"gulp-cached": "^1.1.1",
 		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^3.3.0",
 		"gulp-jquery": "^1.1.2",
 		"gulp-minify-css": "^1.2.4",
 		"gulp-notify": "^3.0.0",
@@ -36,6 +37,8 @@
 		"gulp-uglify": "^3.0.0",
 		"gulp-util": "^3.0.8",
 		"gulp-watch": "^4.3.11",
+		"imagemin-jpeg-recompress": "^5.1.0",
+		"imagemin-pngquant": "^5.0.1",
 		"node-bourbon": "^4.2.8",
 		"node-neat": "^2.0.0-beta.0",
 		"node-normalize-scss": "^3.0.0"

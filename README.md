@@ -98,6 +98,8 @@ optimisation
 - best practices									/ https://www.webpagefx.com/blog/web-design/20-html-best-practices-you-should-follow/
 - images src set									/ https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html
 - viewport stuff									/ https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
+- pagespeed images reco								/ https://developers.google.com/speed/docs/insights/OptimizeImages
+- images via gulp									/ https://www.joe-pagan.com/blog/google-pagespeed-optimising-decorative-template-images
 
 sass
 - Atomic / CSS conventions
@@ -136,7 +138,7 @@ html / pug
 
 
 js
-- browsersync link									☐
+- browsersync link									☐ ❤
 - minifier & uglyfier								✔
 - gestion FOUC	in & out							☐
 - Usual librairies 									☐
@@ -146,7 +148,7 @@ js
 -- http://www.ecma-international.org/ecma-262/6.0/	☐
 -- https://github.com/feross/standard				☐
 -- https://github.com/airbnb/javascript				☐
-- Remttre import Hyphenopoly au propre				☐
+- Remettre import Hyphenopoly au propre				☐
 
 
 sass
@@ -159,19 +161,18 @@ sass
 -- ex: _fonts.scss > -LightItalic ; use array
 
 - toolbox page style 								☐
--- listes puces custom fa
-//////////////////////////////////////////////////////////////////////////////Voir pour césures auto
+-- listes puces custom fa w. :before \truc			☐
 
 
 Final check
 - documentation										☐
 - pagespeed											☐
 -- fix css/js preventing display					☐
--- image optimize (wat -_-)							☐
--- browser cache									☐
+-- image optimize (wat -_-)							✔ // to test
+-- browser cache									✔ // to test
 -- autoriser compression							☐
--- html minify complet								☐
--- minifier hyphenopoly js x2						☐
+-- html minify complet								✔
+-- minifier hyphenopoly js x2						✔ // to test
 
 - w3c												☐
 

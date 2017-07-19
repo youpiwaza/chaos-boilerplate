@@ -1,29 +1,30 @@
 //// Requires
 /// gulp stuff
-var gulp 					= require('gulp'),
-	prefix 					= require('gulp-autoprefixer'),
-	cache 					= require('gulp-cached'),
-	concat  				= require('gulp-concat'),
-	jquery 					= require('gulp-jquery'),
-	minifycss 				= require('gulp-minify-css'),
-	modernizr 				= require('gulp-modernizr'),
-	notify 					= require('gulp-notify'),
-	plumber					= require('gulp-plumber'),
-	pug 					= require('gulp-pug'),
-	sass 					= require('gulp-sass'),
-	sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
-	uglify 					= require('gulp-uglify'),
-	util 					= require('gulp-util');
-
-/// other stuff
-var browserSync 			= require('browser-sync').create();
+const 	browserSync 			= require('browser-sync').create(),
+		gulp 					= require('gulp'),
+		prefix 					= require('gulp-autoprefixer'),
+		cache 					= require('gulp-cached'),
+		concat  				= require('gulp-concat'),
+		imagemin 				= require('gulp-imagemin');
+		jquery 					= require('gulp-jquery'),
+		minifycss 				= require('gulp-minify-css'),
+		modernizr 				= require('gulp-modernizr'),
+		notify 					= require('gulp-notify'),
+		plumber					= require('gulp-plumber'),
+		pug 					= require('gulp-pug'),
+		sass 					= require('gulp-sass'),
+		sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
+		uglify 					= require('gulp-uglify'),
+		util 					= require('gulp-util'),
+		imageminJpegRecompress 	= require('imagemin-jpeg-recompress'),
+		imageminPngquant 		= require('imagemin-pngquant');
 
 // "node-refills": "^1.0.1" // useless af, need copy paste from website
 
 
 //// Vars
 /// ressources paths & dest
-var paths = {
+const paths = {
 	// assets
 	assets: {
 							dest: 'build/assets',
@@ -33,6 +34,12 @@ var paths = {
 	// base src
 	build: 					'build/',
 
+	// images (for minification)
+	images: {
+							dest: 'build/assets/visuals/images/',
+							src: 'src/assets/visuals/images/**/*.*'
+	},
+
 	// html
 	pug: {
 							dest: 'build/',
@@ -41,13 +48,13 @@ var paths = {
 
 	// scripts
 	scripts: {
-		dest: 				'./build/scripts',
-		// No basic npm jquery stuff, need to hard copy last version // huehue
-		src: [	
-			'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
-			'./src/scripts/**/*.js',
-			'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
-		]
+							dest: 				'./build/scripts',
+							// No basic npm jquery stuff, need to hard copy last version // huehue
+							src: [	
+								'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+								'./src/scripts/**/*.js',
+								'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
+							]
 	},
 	
 	src: 					'src/',
@@ -135,12 +142,36 @@ gulp.task('html', function(){
 });
 
 
+// Image minification
+// lossless + progressive + strip all (pagespeed recommandations)
+gulp.task('imagemin', function () { 
+	return 	gulp.src(paths.images.src)
+		.pipe(imagemin([
+			imagemin.gifsicle({ interlaced: true }),
+
+			imageminJpegRecompress({
+				max: 80,
+				min: 70,
+				progressive: true
+		}),
+
+		imageminPngquant({quality: '75-85'}),
+			imagemin.svgo({
+				plugins: [{ removeViewBox: false }]
+			})
+		]))
+
+		.pipe(gulp.dest(paths.images.dest));
+});
+
+
+
 // js
 gulp.task('js', function () {
 	return gulp.src(paths.scripts.src)
 		// .pipe(modernizr()) // activate if needed
 		.pipe(uglify())
-        .pipe(concat('main.js'))
+		.pipe(concat('main.js'))
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
@@ -198,7 +229,7 @@ gulp.task('sass', function (){
 
 
 //// Commands
-gulp.task('default', [ 'copy-assets', 'html', 'js', 'sass' ]);
+gulp.task('default', [ 'copy-assets', 'html', 'js', 'sass', 'imagemin' ]);
 gulp.task('devBuild', [ 'html', 'sass', 'js' ]);
 gulp.task('w', ['devBuild'], watch); // watch
 
@@ -282,7 +313,8 @@ gulp.task('sass-test', function (){
 gulp.task('test', [ 'html-test', 'sass-test' ]);
 
 
-//// Thanks 
+//// Thanks to
 /*
  * https://www.mikestreety.co.uk/blog/a-simple-sass-compilation-gulpfile-js
+ * .. and to all awesome guys you worked, work or will work on open source plugins
  */
