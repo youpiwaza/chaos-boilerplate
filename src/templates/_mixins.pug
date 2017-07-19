@@ -3,14 +3,18 @@ mixin debug(message)
 	h1= message
 
 //- Images
-mixin imgResponsive(imageNameWithoutExt, imageAlt, imageTitle)
+mixin imgResponsive(imageNameWithoutExt, imageAlt, imageTitle, viewport)
 	- var srcsets = ''
 	- var imgResponsiveLength = imgResponsive.length - 1
+	
 	each resolution, index in imgResponsive
 		- if ( index < imgResponsiveLength )
 			- srcsets += imgsrc + imageNameWithoutExt + '-' + resolution + imgext + ' ' + resolution + 'w, '
 		- else
 			- srcsets += imgsrc + imageNameWithoutExt + imgext + ' ' + resolution + 'w'
+	
+	if !viewport
+		- var viewport = "100w"
 
 	//- +debug(srcsets)
 	//- outputs something like "images/example-320.jpg 320w, images/example-640.jpg 640w, images/example-960.jpg 960w, images/example.jpg 1280w", see /templates/_vars.pug
@@ -18,7 +22,7 @@ mixin imgResponsive(imageNameWithoutExt, imageAlt, imageTitle)
 	
 	img(	alt=		imageAlt
 			height=		'851'
-			sizes= 		'100vw'
+			sizes= 		viewport
 			src=		imgsrc +  imageNameWithoutExt + imgext
 			srcset=		srcsets
 			title=		imageTitle
