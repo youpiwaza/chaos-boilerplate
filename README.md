@@ -119,7 +119,7 @@ misc
 - page toolbox										☐
 -- Styles de base 									☐
 
-- 404												☐
+- 404												☐ ❤
 - google analytics									☐
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 - multi linguisme									☐
@@ -137,7 +137,7 @@ html / pug
 
 js
 - browsersync link									☐
-- minifier & uglyfier								☐
+- minifier & uglyfier								✔
 - gestion FOUC	in & out							☐
 - Usual librairies 									☐
 -- Hammer.js / Touch events 						☐
@@ -146,6 +146,7 @@ js
 -- http://www.ecma-international.org/ecma-262/6.0/	☐
 -- https://github.com/feross/standard				☐
 -- https://github.com/airbnb/javascript				☐
+- Remttre import Hyphenopoly au propre				☐
 
 
 sass
@@ -165,6 +166,13 @@ sass
 Final check
 - documentation										☐
 - pagespeed											☐
+-- fix css/js preventing display					☐
+-- image optimize (wat -_-)							☐
+-- browser cache									☐
+-- autoriser compression							☐
+-- html minify complet								☐
+-- minifier hyphenopoly js x2						☐
+
 - w3c												☐
 
 

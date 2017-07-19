@@ -43,7 +43,11 @@ var paths = {
 	scripts: {
 		dest: 				'./build/scripts',
 		// No basic npm jquery stuff, need to hard copy last version // huehue
-		src: 				['./src/scripts/**/*.js', './node_modules/jquery-custom/jquery.2/dist/jquery.min.js']
+		src: [	
+			'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+			'./src/scripts/**/*.js',
+			'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
+		]
 	},
 	
 	src: 					'src/',
@@ -84,6 +88,18 @@ gulp.task('browser-sync', function() {
 
 /// Straight copy of assets
 gulp.task('copy-assets', function() {
+	// copy .htaccess and root files stuff
+	gulp.src(
+		[	
+			paths.src + '.htaccess',
+			paths.src + 'crossdomain.xml',
+			paths.src + 'humans.txt',
+			paths.src + 'robots.txt'
+		]
+	)
+		.pipe(gulp.dest(paths.build));
+
+	// Then all stuff from actual assets/ dir
 	return gulp.src(paths.assets.src)
 		.pipe(gulp.dest(paths.assets.dest));
 });
