@@ -27,8 +27,25 @@ const 	browserSync 			= require('browser-sync').create(),
 const paths = {
 	// assets
 	assets: {
-							dest: 'build/assets',
-							src: 'src/assets/**/*.*'
+							dest: 				'build/assets',
+							destRootFiles: 		'build/',
+							src: [
+								// Straight all from /assets ...
+								'src/assets/**/*.*',
+
+								// .. except images as they will be treated by imagemin task
+								// Manuals file type exceptions to allow copy of .html, allowing SEO crawlers for refs (cf. .htaccess)
+								'!src/assets/visuals/images/**/*.jpg',
+								'!src/assets/visuals/images/**/*.png',
+								'!src/assets/visuals/images/**/*.gif'
+							],
+							srcRootFiles: [
+								// copy .htaccess and root files stuff
+								'src/.htaccess',
+								'src/crossdomain.xml',
+								'src/humans.txt',
+								'src/robots.txt'
+							]
 	},
 
 	// base src
@@ -93,20 +110,11 @@ gulp.task('browser-sync', function() {
 });
 
 
-/// Straight copy of assets
+/// Copy of assets dir, check paths.assets for subtilities
 gulp.task('copy-assets', function() {
-	// copy .htaccess and root files stuff
-	gulp.src(
-		[	
-			paths.src + '.htaccess',
-			paths.src + 'crossdomain.xml',
-			paths.src + 'humans.txt',
-			paths.src + 'robots.txt'
-		]
-	)
-		.pipe(gulp.dest(paths.build));
+	gulp.src(paths.assets.srcRootFiles)
+		.pipe(gulp.dest(paths.assets.destRootFiles));
 
-	// Then all stuff from actual assets/ dir
 	return gulp.src(paths.assets.src)
 		.pipe(gulp.dest(paths.assets.dest));
 });

@@ -118,13 +118,12 @@ Nah / ✘
 
 .											  status / priorities
 misc
-- page toolbox										☐
--- Styles de base 									☐
-
 - 404												☐ ❤
 - google analytics									☐
 - vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 - multi linguisme									☐
+- Autorisation crawler dossier images
+	pour moteurs de recherche						☐
 
 
 dev Env
