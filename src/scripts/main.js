@@ -5,8 +5,22 @@ var stylesheet = loadCSS( "styles/main.css" );
 onloadCSS( stylesheet, function() {
     console.log( "LoadCSS > Stylesheet has loaded. Yay !" );
 
-    $('.no-fouc').fadeIn(); // Jquery animation
+    // + No Fouc management
+    $('.no-fouc').fadeIn(); // Lovely Jquery animation on load
+
+    // Fouc out management
+	$('a').click(function(e) {
+
+		e.preventDefault();
+		newLocation = this.href;
+
+		$('body').fadeOut(200, function() {
+			window.location = newLocation;
+		});
+	});
 });
+
+
 
 // Load Hyphenopoly plugins, manage font césure & text FOUC
 // Need to be loaded beofre HyphenopolyLoader, cf. gulpfile paths.scripts.src
