@@ -3,11 +3,12 @@
 //- imageColumnSize between 1 & 12
 //- imagePosition "Left" or "Right"
 
-//- If image 8/4 text, desktop 970 / 1900 ~= 51%, default
+//- If image 8/4 text, desktop 970 / 1900 ~= 51%, "60vw" default in imgResponsive mixin
+- var viewport = "60vw"
 //- If image 9/3 text, 1096 / 1900 ~= 58%
 if (imageColumnSize == 9)
-	//- - var viewport = "58vw"
 	- var viewport = "70vw"
+	//- - var viewport = "58vw"
 
 article.column-full.removePaddings
 	.imageAndtextContainer
