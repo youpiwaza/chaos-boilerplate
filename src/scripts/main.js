@@ -4,6 +4,8 @@ console.log('main.js');
 var stylesheet = loadCSS( "styles/main.css" );
 onloadCSS( stylesheet, function() {
     console.log( "LoadCSS > Stylesheet has loaded. Yay !" );
+
+    $('.no-fouc').fadeIn(); // Jquery animation
 });
 
 // Load Hyphenopoly plugins, manage font césure & text FOUC

@@ -101,6 +101,7 @@ optimisation
 - pagespeed images reco								/ https://developers.google.com/speed/docs/insights/OptimizeImages
 - images via gulp									/ https://www.joe-pagan.com/blog/google-pagespeed-optimising-decorative-template-images
 - global loading & displaying						/ https://www.filamentgroup.com/lab/performance-rwd.html
+- fouc prevention									/ http://johnpolacek.com/2012/10/03/help-prevent-fouc/
 
 sass
 - Atomic / CSS conventions
@@ -125,11 +126,6 @@ misc
 - multi linguisme									☐
 - Autorisation crawler dossier images
 	pour moteurs de recherche						☐
-- server pagespeed css horsh*t						☐
--- https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery?hl=en
--- https://developers.google.com/speed/pagespeed/module/
--- https://modpagespeed.com/doc/filter-prioritize-critical-css
---- or just fuck it, send css once for all website, this sounds so fucking retarded if your website has more than one page
 
 dev Env
 - linters											☐
@@ -146,8 +142,9 @@ html / pug
 
 js
 - browsersync link									☐ ❤
-- minifier & uglyfier								✔
 - gestion FOUC	in & out							☐
+-- in												✔
+-- out 												☐
 - Usual librairies 									☐
 -- Hammer.js / Touch events 						☐
 -- Select / radio / etc. normalizers 				☐
@@ -170,20 +167,9 @@ sass
 - toolbox page style 								☐
 -- listes puces custom fa w. :before \truc			☐
 
-- load css asynchronously							☐ / https://github.com/filamentgroup/loadCSS/blob/master/README.md
-													  / https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
-
 
 Final check
 - documentation										☐
-
-- pagespeed											☐
--- fix css/js preventing display					☐ // to test
--- image optimize (wat -_-)							✔
--- browser cache									✔
--- autoriser compression							✔
--- html minify complet								✔
--- minifier hyphenopoly js x2						✔
 
 - http://www.webpagetest.org/						☐
 
@@ -211,6 +197,7 @@ html
 js
 - basic js files									✔
 - jQuery											✔
+- minifier & uglyfier								✔
 
 misc
 - recup bases mah-skeleton 							✔
@@ -223,6 +210,12 @@ misc
 -- Advanced images management						✔ 
 -- containers / grid management						✔ 
 
+- server pagespeed css horsh*t						✘
+-- https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery?hl=en
+-- https://developers.google.com/speed/pagespeed/module/
+-- https://modpagespeed.com/doc/filter-prioritize-critical-css
+--- or just fuck it, send css once for all website, this sounds so fucking retarded if your website has more than one page
+
 sass
 - bourbon & co										✔
 -- bourbon											✔
@@ -230,4 +223,13 @@ sass
 -- refills											✘ // unavailable to npm for now >.>
 - Modernizr, Normalize.css 							✔
 - normalize (ci besoin ek bourbon)					✔
-
+- load css asynchronously							✔ / https://github.com/filamentgroup/loadCSS/blob/master/README.md
+													  / https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
+Final check
+- pagespeed											✔
+-- fix css/js preventing display					✘ / Added, pagespeed gives 0 fucks / brainwashing to force pagespeed plugin install on servers
+-- image optimize (wat -_-)							✔
+-- browser cache									✔
+-- autoriser compression							✔
+-- html minify complet								✔
+-- minifier hyphenopoly js x2						✔

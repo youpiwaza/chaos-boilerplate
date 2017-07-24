@@ -27,7 +27,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: $color-primary;
+	// background-color: $color-primary; // inline in templates/_html-header.pug in order to rpevent bg color flash
 	color: $color-sixth;
 	font-family: $fontText, sans-serif;
 	hyphens: auto;

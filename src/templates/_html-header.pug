@@ -11,6 +11,10 @@
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
 		
 		// styles
+		// fouc prevention / http://johnpolacek.com/2012/10/03/help-prevent-fouc/
+		style(type="text/css").
+			.no-fouc { background-color: #c0dfd9; display: none; }
+
 		- var cssSrc = "styles/main.css"
 		// Async load css
 		link(as="style" href=cssSrc onload="this.rel='stylesheet'" rel="preload" type="text/css")
@@ -44,7 +48,7 @@
 			title!= titleText + titleSeparator + pageName
 		else
 			title!= titleText
-	<body>
+	body.no-fouc
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<br)Like seriously dude :(</p>
 		<![endif]-->
