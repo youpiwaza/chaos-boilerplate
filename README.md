@@ -128,6 +128,9 @@ misc
 
 dev Env
 - linters											☐
+- Script img pour srcset							☐
+-- Tableau variables 320 640 960 1280px				☐
+-- Image de base + resize aux bonnes dims. 			☐
 
 
 html / pug
