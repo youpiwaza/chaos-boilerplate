@@ -125,9 +125,9 @@ Nah / ✘
 
 .											  status / priorities
 misc
-- 404												☐ ❤
+- 404												✔
 - google analytics									☐
-- vignettes IE										☐		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
+- vignettes IE										☐ ❤		browserconfig.xml (html5bp) / https://msdn.microsoft.com/library/dn455106.aspx
 - multi linguisme									☐
 - Autorisation crawler dossier images
 	pour moteurs de recherche						☐
@@ -147,9 +147,6 @@ html / pug
 
 js
 - browsersync link									☐ ❤
-- gestion FOUC	in & out							☐
--- in												✔
--- out 												☐
 - Usual librairies 									☐
 -- Hammer.js / Touch events 						☐
 -- Select / radio / etc. normalizers 				☐
@@ -199,6 +196,9 @@ js
 - basic js files									✔
 - jQuery											✔
 - minifier & uglyfier								✔
+- gestion FOUC	in & out							✔
+-- in												✔
+-- out 												✔
 
 misc
 - recup bases mah-skeleton 							✔
