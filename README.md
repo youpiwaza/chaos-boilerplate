@@ -102,6 +102,11 @@ optimisation
 - images via gulp									/ https://www.joe-pagan.com/blog/google-pagespeed-optimising-decorative-template-images
 - global loading & displaying						/ https://www.filamentgroup.com/lab/performance-rwd.html
 - fouc prevention									/ http://johnpolacek.com/2012/10/03/help-prevent-fouc/
+- online testers
+-- pagespeed
+-- pingdom											/ https://tools.pingdom.com/
+-- website optimization 							/ http://websiteoptimization.com/services/analyze/
+-- w3c												/ https://validator.w3.org/
 
 sass
 - Atomic / CSS conventions
@@ -171,10 +176,6 @@ sass
 Final check
 - documentation										☐
 
-- http://www.webpagetest.org/						☐
-
-- w3c												☐
-
 
 
 
@@ -233,3 +234,7 @@ Final check
 -- autoriser compression							✔
 -- html minify complet								✔
 -- minifier hyphenopoly js x2						✔
+- pingdom											✔
+- websiteoptimization								✔
+- http://www.webpagetest.org/						✔
+- w3c												✔
