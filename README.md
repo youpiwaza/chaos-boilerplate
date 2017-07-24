@@ -100,6 +100,7 @@ optimisation
 - viewport stuff									/ https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
 - pagespeed images reco								/ https://developers.google.com/speed/docs/insights/OptimizeImages
 - images via gulp									/ https://www.joe-pagan.com/blog/google-pagespeed-optimising-decorative-template-images
+- global loading & displaying						/ https://www.filamentgroup.com/lab/performance-rwd.html
 
 sass
 - Atomic / CSS conventions
@@ -124,7 +125,11 @@ misc
 - multi linguisme									☐
 - Autorisation crawler dossier images
 	pour moteurs de recherche						☐
-
+- server pagespeed css horsh*t						☐
+-- https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery?hl=en
+-- https://developers.google.com/speed/pagespeed/module/
+-- https://modpagespeed.com/doc/filter-prioritize-critical-css
+--- or just fuck it, send css once for all website, this sounds so fucking retarded if your website has more than one page
 
 dev Env
 - linters											☐
@@ -165,16 +170,22 @@ sass
 - toolbox page style 								☐
 -- listes puces custom fa w. :before \truc			☐
 
+- load css asynchronously							☐ / https://github.com/filamentgroup/loadCSS/blob/master/README.md
+													  / https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
+
 
 Final check
 - documentation										☐
+
 - pagespeed											☐
--- fix css/js preventing display					☐
--- image optimize (wat -_-)							✔ // to test
--- browser cache									✔ // to test
--- autoriser compression							☐
+-- fix css/js preventing display					☐ // to test
+-- image optimize (wat -_-)							✔
+-- browser cache									✔
+-- autoriser compression							✔
 -- html minify complet								✔
--- minifier hyphenopoly js x2						✔ // to test
+-- minifier hyphenopoly js x2						✔
+
+- http://www.webpagetest.org/						☐
 
 - w3c												☐
 

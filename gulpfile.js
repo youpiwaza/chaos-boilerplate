@@ -69,6 +69,13 @@ const paths = {
 							// No basic npm jquery stuff, need to hard copy last version // huehue
 							src: [	
 								'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+
+								// Css async loading
+								// https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
+								'./node_modules/fg-loadcss/src/loadCSS.js', // loadCSS script
+								'./node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check
+								'./node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script
+
 								'./src/scripts/**/*.js',
 								'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
 							]
