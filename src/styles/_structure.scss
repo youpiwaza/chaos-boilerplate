@@ -20,7 +20,7 @@
 	zoom: 1;
 }
 
-
+ 
 
 //// Native elements
 * {
@@ -28,17 +28,17 @@
 }
 body {
 	background-color: $color-primary;
-	color: $color-fourth;
+	color: $color-sixth;
 	font-family: $fontText, sans-serif;
 	hyphens: auto;
 }
 
 // titles
 h1, h2, h3, h4, h5, h6 {
-	color: $color-secondary;
+	color: $color-sixth;
 	font-family: $fontTitle, serif;
 	letter-spacing: .1em;
-	text-shadow: 1px 2px $color-fourth;
+	text-shadow: 1px 2px $color-secondary;
 }
 
 @for $i from 1 through 6 {
@@ -49,20 +49,24 @@ h1, h2, h3, h4, h5, h6 {
 
 // links
 a {
-	color: darken($color-primary, 20%);
+	color: $color-third;
 
 	&:visited {
-		color: darken($color-primary, 20%);
+		color: darken($color-third, 10%);
 	}
 
 	&:active,
 	&:hover {
-		color: darken($color-third, 10%);
+		color: $color-fourth;
 	}
 
 	&.active {
 		color: $color-fourth;
 	}
+}
+
+em {
+	color: lighten($color-sixth, 10%);
 }
 
 // forms
@@ -80,8 +84,11 @@ fieldset {
 
 // separator
 hr {
-	border-bottom: 1px solid $color-third;
+	background-color: $color-fifth;
+	border: 0;
+	border-bottom: 1px solid $color-secondary;
 	margin: 2em 0;
+	height: 1px;
 }
 
 // images
@@ -89,7 +96,6 @@ img {
 	height: auto;
 	max-height: 100%;
 	max-width: 100%;
-	width: 100%;
 }
 
 legend {
@@ -98,9 +104,13 @@ legend {
 }
 
 p {
+	line-height: 1.4em;
 	word-break: break-word;
 }
 
+strong {
+	// color: lighten($color-sixth, 10%);
+}
 
 
 //// Containers
@@ -128,6 +138,8 @@ $neatBreakpoint: (
 
 	@include grid-media( $neatBreakpoint ) {
 		@include grid-column(12);
+
+		margin-bottom: 1em;
 	}
 }
 .column-9 {
@@ -175,8 +187,17 @@ $neatBreakpoint: (
 
 
 
-//// Simple classes
+//// Colors 				// TODO > all main colors & chaos bp
+.color-third {
+	color: $color-third;
+}
 
+//// Simple classes
+.container {
+	// background-color: $color-secondary;
+	// background-color: rgba(23, 34, 34, 0.9);// $color-secondary;
+	// background-color: rgba(224, 239, 241, 0.9); // white
+}
 
 
 

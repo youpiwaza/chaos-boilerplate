@@ -14,7 +14,9 @@ mixin imgResponsive(imageNameWithoutExt, imageAlt, imageTitle, viewport)
 			- srcsets += imgsrc + imageNameWithoutExt + imgext + ' ' + resolution + 'w'
 	
 	if !viewport
-		- var viewport = "100w"
+		//- desktop 970 / 1900 ~= 51%
+		//- - var viewport = "51vw"
+		- var viewport = "60vw"
 
 	//- +debug(srcsets)
 	//- outputs something like "images/example-320.jpg 320w, images/example-640.jpg 640w, images/example-960.jpg 960w, images/example.jpg 1280w", see /templates/_vars.pug

@@ -1,4 +1,4 @@
-//- Need defined variables before include : content, imageColumnSize, imageFileName, imageAlt, imageTitle, imageFileName2, imageAlt2, imageTitle2
+//- Need defined variables before include : content, imageFileName, imageAlt, imageTitle, imageFileName2, imageAlt2, imageTitle2
 //- title is optionnal
 //- imageColumnSize between 1 & 12
 //- imagePosition "Left" or "Right"
@@ -6,9 +6,12 @@
 article.column-full.removePaddings.dualImages
 	.dualImages
 		.column-6
-			+imgResponsive(imageFileName, imageAlt, imageTitle, '50w')
+			//- 												desktop 750 / 1900 ~= 39%
+			//- +imgResponsive(imageFileName, imageAlt, imageTitle, '40vw')
+			+imgResponsive(imageFileName, imageAlt, imageTitle, '50vw')
 		.column-6
-			+imgResponsive(imageFileName2, imageAlt2, imageTitle2, '50w')
+			//- +imgResponsive(imageFileName2, imageAlt2, imageTitle2, '40vw')
+			+imgResponsive(imageFileName2, imageAlt2, imageTitle2, '50vw')
 	.imageText
 		if title
 			h4= title
