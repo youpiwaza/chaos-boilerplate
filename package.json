@@ -1,22 +1,17 @@
 {
-	"name": "dark-eldar-blog",
+	"name": "Chaos boilerplate",
 	"version": "1.0.0",
-	"description": "Blog relating warhammer 40.000 stuff, mainly Dark eldar / Drukhari amry photo, alternative color scheme (white)",
+	"description": "Boilerplate using gulp, sass, and lots of good stuff",
 	"main": "build/index.html",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
-		"dark",
-		"eldar",
-		"drukhari",
-		"white",
-		"alternative",
-		"color",
-		"scheme",
-		"warhammer",
-		"40000",
-		"40.000"
+		"boilerplate",
+		"html5",
+		"gulp",
+		"sass",
+		"pugjs"
 	],
 	"author": "Masamune / Maxime Chevasson",
 	"license": "MIT",
