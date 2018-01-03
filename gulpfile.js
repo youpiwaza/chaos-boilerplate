@@ -188,6 +188,8 @@ gulp.task('js', function () {
 
 	// Delays for abel es6 & uglyfier due to Jquery & Hyphenopoly_Loader inclusions/re-minify/concat/etc.
 	// Add different files for dev/watch & concat only on production ?
+
+	// OU ALORS Babeliser/uglify seulement ce dont on a besoin, puis concat avec les libs externes déjà minifiées *-*
 	
 	// return gulp.src(paths.scripts.src)
 	return gulp.src('src/scripts/main.js')

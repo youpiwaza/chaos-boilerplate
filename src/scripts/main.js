@@ -41,5 +41,5 @@ $( document ).ready(function() {
 }); 
  */
 // test babel 
-let a = 46;
+let a = 42;
 console.log(a); //40
