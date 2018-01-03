@@ -55,19 +55,19 @@ const paths = {
 
 	// images (for minification)
 	images: {
-							dest: 'build/assets/visuals/images/',
-							src: 'src/assets/visuals/images/**/*.*'
+							dest: 	'build/assets/visuals/images/',
+							src: 	'src/assets/visuals/images/**/*.*'
 	},
 
 	// html
 	pug: {
-							dest: 'build/',
-							src: 'src/*.pug'
+							dest: 	'build/',
+							src: 	'src/*.pug'
 	},
 
 	// scripts
 	scripts: {
-							dest: 				'./build/scripts',
+							dest: 	'./build/scripts',
 							// No basic npm jquery stuff, need to hard copy last version // huehue
 							src: [	
 								'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
@@ -185,14 +185,19 @@ gulp.task('imagemin', function () {
 
 // js
 gulp.task('js', function () {
-	return gulp.src(paths.scripts.src)
+
+	// Delays for abel es6 & uglyfier due to Jquery & Hyphenopoly_Loader inclusions/re-minify/concat/etc.
+	// Add different files for dev/watch & concat only on production ?
+	
+	// return gulp.src(paths.scripts.src)
+	return gulp.src('src/scripts/main.js')
 		.pipe(sourcemaps.init())							// 100ms
 		/// Manage ES6 via babel
-		.pipe(babel({										// 2.5s ?
+		.pipe(babel({										// 2.5s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 400-500ms avec juste main.js
 			presets: ['env']
 		}))
 		// .pipe(modernizr()) // activate if needed
-		// .pipe(uglify())									// 2s ?
+		.pipe(uglify())										// 2s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 130-180ms avec juste main.js
 		.pipe(concat('main.js'))							// 100ms
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.scripts.dest))

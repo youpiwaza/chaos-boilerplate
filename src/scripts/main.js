@@ -1,5 +1,5 @@
 console.log('main.js');
-
+/*
 $( document ).ready(function() { 
 
 	// + No Fouc management
@@ -39,7 +39,7 @@ $( document ).ready(function() {
 	}; 
 
 }); 
- 
+ */
 // test babel 
-let a = 43; 
+let a = 46;
 console.log(a); //40
