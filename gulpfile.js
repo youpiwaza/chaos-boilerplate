@@ -3,8 +3,9 @@
 const 	browserSync 			= require('browser-sync').create(),
 		gulp 					= require('gulp'),
 		prefix 					= require('gulp-autoprefixer'),
+		babel 					= require('gulp-babel'), 
 		cache 					= require('gulp-cached'),
-		concat  				= require('gulp-concat'),
+		concat 					= require('gulp-concat'),
 		imagemin 				= require('gulp-imagemin');
 		jquery 					= require('gulp-jquery'),
 		minifycss 				= require('gulp-minify-css'),
@@ -14,6 +15,7 @@ const 	browserSync 			= require('browser-sync').create(),
 		pug 					= require('gulp-pug'),
 		sass 					= require('gulp-sass'),
 		sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
+		sourcemaps 				= require('gulp-sourcemaps'), 
 		uglify 					= require('gulp-uglify'),
 		util 					= require('gulp-util'),
 		imageminJpegRecompress 	= require('imagemin-jpeg-recompress'),
@@ -72,9 +74,9 @@ const paths = {
 
 								// Css async loading
 								// https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
-								'./node_modules/fg-loadcss/src/loadCSS.js', // loadCSS script
-								'./node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check
-								'./node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script
+								// './node_modules/fg-loadcss/src/loadCSS.js', // loadCSS script 
+								// './node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check 
+								// './node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script 
 
 								'./src/scripts/**/*.js',
 								'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
@@ -181,14 +183,19 @@ gulp.task('imagemin', function () {
 
 
 
-// js
-gulp.task('js', function () {
-	return gulp.src(paths.scripts.src)
-		// .pipe(modernizr()) // activate if needed
-		.pipe(uglify())
-		.pipe(concat('main.js'))
-		.pipe(gulp.dest(paths.scripts.dest));
-});
+gulp.task('js', function () { 
+	return gulp.src(paths.scripts.src) 
+		.pipe(sourcemaps.init()) 
+		/// Manage ES6 via babel 
+		.pipe(babel({ 
+		   presets: ['env'] 
+		})) 
+		// .pipe(modernizr()) // activate if needed 
+		.pipe(uglify()) 
+		.pipe(concat('main.js')) 
+		.pipe(sourcemaps.write('.')) 
+		.pipe(gulp.dest(paths.scripts.dest)); 
+}); 
 
 
 // Sass compilation

@@ -63,6 +63,10 @@ js													> src/scripts
 - js
 -- uglifyer											/ https://github.com/mishoo/UglifyJS2 / https://github.com/terinjokes/gulp-uglify
 -- concat											/ https://www.npmjs.com/package/gulp-concat
+-- ES6 via babel                  					/ https://www.npmjs.com/package/gulp-babel 
+--- babel-core 
+--- gulp-babel 
+--- gulp-sourcemaps 
 
 - sublim text 3 									/ https://www.sublimetext.com/3
 -- emmet 											/ https://emmet.io/blog/sublime-text-3/

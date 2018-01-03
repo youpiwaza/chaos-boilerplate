@@ -16,11 +16,7 @@
 			.no-fouc { background-color: #c0dfd9; display: none; }
 
 		- var cssSrc = "styles/main.css"
-		// Async load css
-		link(as="style" href=cssSrc onload="this.rel='stylesheet'" rel="preload" type="text/css")
-		// fallback
-		noscript
-			link(href=cssSrc rel="stylesheet")
+		link(as="style" href=cssSrc rel="stylesheet" type="text/css")
 		
 		// favicons
 		link(rel="apple-touch-icon" sizes="57x57" href="assets/visuals/misc/favicon/apple-touch-icon-57x57.png")
