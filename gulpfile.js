@@ -188,11 +188,11 @@ gulp.task('js', function () {
 	return gulp.src(paths.scripts.src)
 		.pipe(sourcemaps.init())							// 100ms
 		/// Manage ES6 via babel
-		.pipe(babel({										// 2s ?
+		.pipe(babel({										// 2.5s ?
 			presets: ['env']
 		}))
 		// .pipe(modernizr()) // activate if needed
-		.pipe(uglify())										// 2s ?
+		// .pipe(uglify())									// 2s ?
 		.pipe(concat('main.js'))							// 100ms
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.scripts.dest))
