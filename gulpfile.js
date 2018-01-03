@@ -3,9 +3,9 @@
 const 	browserSync 			= require('browser-sync').create(),
 		gulp 					= require('gulp'),
 		prefix 					= require('gulp-autoprefixer'),
-		babel 					= require('gulp-babel'), 
+		babel 					= require('gulp-babel'),
 		cache 					= require('gulp-cached'),
-		concat 					= require('gulp-concat'),
+		concat  				= require('gulp-concat'),
 		imagemin 				= require('gulp-imagemin');
 		jquery 					= require('gulp-jquery'),
 		minifycss 				= require('gulp-minify-css'),
@@ -15,7 +15,7 @@ const 	browserSync 			= require('browser-sync').create(),
 		pug 					= require('gulp-pug'),
 		sass 					= require('gulp-sass'),
 		sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
-		sourcemaps 				= require('gulp-sourcemaps'), 
+		sourcemaps 				= require('gulp-sourcemaps'),
 		uglify 					= require('gulp-uglify'),
 		util 					= require('gulp-util'),
 		imageminJpegRecompress 	= require('imagemin-jpeg-recompress'),
@@ -74,9 +74,9 @@ const paths = {
 
 								// Css async loading
 								// https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
-								// './node_modules/fg-loadcss/src/loadCSS.js', // loadCSS script 
-								// './node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check 
-								// './node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script 
+								// './node_modules/fg-loadcss/src/loadCSS.js', // loadCSS script
+								// './node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check
+								// './node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script
 
 								'./src/scripts/**/*.js',
 								'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
@@ -183,22 +183,25 @@ gulp.task('imagemin', function () {
 
 
 
-gulp.task('js', function () { 
-	return gulp.src(paths.scripts.src) 
-		.pipe(sourcemaps.init()) 
-		/// Manage ES6 via babel 
-		.pipe(babel({ 
-		   presets: ['env'] 
-		})) 
-		// .pipe(modernizr()) // activate if needed 
-		.pipe(uglify()) 
-		.pipe(concat('main.js')) 
-		.pipe(sourcemaps.write('.')) 
+// js
+gulp.task('js', function () {
+	return gulp.src(paths.scripts.src)
+		.pipe(sourcemaps.init())							// 100ms
+		/// Manage ES6 via babel
+		.pipe(babel({										// 2s ?
+			presets: ['env']
+		}))
+		// .pipe(modernizr()) // activate if needed
+		.pipe(uglify())										// 2s ?
+		.pipe(concat('main.js'))							// 100ms
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.scripts.dest))
 
-		// Call browser reload 
-    	.pipe(browserSync.stream());
-}); 
+		// Call browser reload
+		.pipe(browserSync.stream());
+
+
+});
 
 
 // Sass compilation
@@ -252,6 +255,23 @@ gulp.task('sass', function (){
 });
 
 
+// Dedicated watch functions to allow independant re-compile & force browser reload
+gulp.task('watch-html', ['html'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('watch-js', ['js'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('watch-sass', ['sass'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+
 
 //// Commands
 gulp.task('default', [ 'copy-assets', 'html', 'js', 'sass', 'imagemin' ]);
@@ -262,27 +282,18 @@ gulp.task('w', ['devBuild'], watch); // watch
 
 //// Functions
 
-// dedicated function for wath task
+// dedicated function for watch task
 function watch() {
 
 	// browser-sync local server
 	gulp.start('browser-sync');
 
-	gulp.watch(
-		[	
-			// paths.watch.scripts,
-			paths.watch.scripts,
-			paths.watch.styles,
-			paths.watch.templates
-		],
-		[	
-			'js', // why taking 3 sec ?  
-			'sass', // ~100ms 
-			'html' // ~100ms 
-		]
-	);
+	// Independant calls for independant reloads
+	// Dedicated functions to force browser reload
+    gulp.watch(paths.watch.templates, 	['watch-html']);
+    gulp.watch(paths.watch.scripts, 	['watch-js']);
+    gulp.watch(paths.watch.styles, 		['watch-sass']);
 }
-
 
 
 

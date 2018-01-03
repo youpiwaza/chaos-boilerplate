@@ -150,7 +150,7 @@ html / pug
 
 
 js
-- browsersync link									☐ ❤
+- browsersync link                  				✅ ❤ // done but 4s compile // 2s uglify, 2s babel ES6 // todo BS cache ? 
 - Usual librairies 									☐
 -- Hammer.js / Touch events 						☐
 -- Select / radio / etc. normalizers 				☐
