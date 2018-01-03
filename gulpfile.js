@@ -194,7 +194,10 @@ gulp.task('js', function () {
 		.pipe(uglify()) 
 		.pipe(concat('main.js')) 
 		.pipe(sourcemaps.write('.')) 
-		.pipe(gulp.dest(paths.scripts.dest)); 
+		.pipe(gulp.dest(paths.scripts.dest))
+
+		// Call browser reload 
+    	.pipe(browserSync.stream());
 }); 
 
 
@@ -268,13 +271,14 @@ function watch() {
 	gulp.watch(
 		[	
 			// paths.watch.scripts,
+			paths.watch.scripts,
 			paths.watch.styles,
 			paths.watch.templates
 		],
 		[	
-			// 'devBuild',
-			'sass',
-			'html'
+			'js', // why taking 3 sec ?  
+			'sass', // ~100ms 
+			'html' // ~100ms 
 		]
 	);
 }
