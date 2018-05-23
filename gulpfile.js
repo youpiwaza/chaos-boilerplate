@@ -4,13 +4,16 @@ const 	browserSync 			= require('browser-sync').create(),
 		gulp 					= require('gulp'),
 		prefix 					= require('gulp-autoprefixer'),
 		babel 					= require('gulp-babel'),
-		cache 					= require('gulp-cached'),
+		cached 					= require('gulp-cached'),
 		cleanCss 				= require('gulp-clean-css'),
 		concat  				= require('gulp-concat'),
+		filter   				= require('gulp-filter'),
+		gulpif  				= require('gulp-if'),
 		imagemin 				= require('gulp-imagemin');
 		notify 					= require('gulp-notify'),
 		plumber					= require('gulp-plumber'),
 		pug 					= require('gulp-pug'),
+		pugInheritance  		= require('gulp-pug-inheritance'),
 		sass 					= require('gulp-sass'),
 		sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
 		sourcemaps 				= require('gulp-sourcemaps'),
@@ -58,8 +61,11 @@ const paths = {
 
 	// html
 	pug: {
-							dest: 	'build/',
-							src: 	'src/*.pug'
+							dest: 			'build/',
+							src: 			'src/*.pug',
+							templateDir: 	'src/templates/',
+							templateSrc: 	'src/templates/**/*.pug',
+							srcS: 			['src/*.pug', 'src/templates/**/*.pug']
 	},
 
 	// scripts
@@ -130,7 +136,7 @@ gulp.task('copy-assets', function() {
 		.pipe(gulp.dest(paths.assets.dest));
 });
 
-
+/*
 /// Pugjs html templates compilation
 gulp.task('html', function(){
 	return gulp.src(paths.pug.src)
@@ -154,6 +160,43 @@ gulp.task('html', function(){
 		.pipe(cache('htmling'))
 
 		.pipe(pug())
+		.pipe(gulp.dest(paths.pug.dest))
+
+		// Call browser reload
+		.pipe(browserSync.stream());
+});
+*/
+
+gulp.task('html', function(){
+	return gulp.src(paths.pug.src)
+
+		// prevent watch crash on error
+		.pipe(plumber({
+			errorHandler: function(err) {
+				notify.onError({
+					title: "Gulp error in " + err.plugin,
+					// message:  err.toString()
+					message:  err.message
+				})(err);
+			},
+			handleError: function (err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+
+		//find files that depend on the files that have changed
+		.pipe(pugInheritance({basedir: 'src/' }))
+
+		//filter out partials (folders and files starting with "_" )
+		.pipe(filter(function (file) {
+            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+        }))
+
+		//process pug templates
+		.pipe(pug())
+
+		//save all the files
 		.pipe(gulp.dest(paths.pug.dest))
 
 		// Call browser reload
@@ -233,7 +276,7 @@ gulp.task('sass', function (){
 		}))
 
 		// caching to fasten watch
-		.pipe(cache('sassing'))
+		.pipe(cached('sassCache'))
 
 		// during watch, force recompile of un modified scss files that imports modified sass files
 		// allow sass watch with cache
@@ -270,6 +313,10 @@ gulp.task('sass', function (){
 
 // Dedicated watch functions to allow independant re-compile & force browser reload
 gulp.task('watch-html', ['html'], function (done) {
+
+	// Used for caching during watch, cf. html()
+	global.isWatching = true;
+    
     browserSync.reload();
     done();
 });

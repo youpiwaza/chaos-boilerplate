@@ -43,6 +43,10 @@ js													> src/scripts
 - gulp												/ http://gulpjs.com/
 // Html templates compilation
 -- gulp-pug											/ https://www.npmjs.com/package/gulp-pug
+-- gulp-cached
+-- gulp-pug-inheritance
+-- gulp-if
+-- gulp-filter
 	
 - git												/ https://git-scm.com/
 -- github											/ https://github.com/youpiwaza
