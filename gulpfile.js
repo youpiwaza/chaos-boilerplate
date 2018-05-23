@@ -9,7 +9,6 @@ const 	browserSync 			= require('browser-sync').create(),
 		imagemin 				= require('gulp-imagemin');
 		jquery 					= require('gulp-jquery'),
 		minifycss 				= require('gulp-minify-css'),
-		modernizr 				= require('gulp-modernizr'),
 		notify 					= require('gulp-notify'),
 		plumber					= require('gulp-plumber'),
 		pug 					= require('gulp-pug'),
@@ -17,7 +16,6 @@ const 	browserSync 			= require('browser-sync').create(),
 		sassPartialsImported 	= require('gulp-sass-partials-imported'), // during watch, force recompile of un modified scss files that imports modified sass files // allow sass watch with cache
 		sourcemaps 				= require('gulp-sourcemaps'),
 		uglify 					= require('gulp-uglify'),
-		util 					= require('gulp-util'),
 		imageminJpegRecompress 	= require('imagemin-jpeg-recompress'),
 		imageminPngquant 		= require('imagemin-pngquant');
 
@@ -198,7 +196,6 @@ gulp.task('js', function () {
 		.pipe(babel({										// 2.5s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 400-500ms avec juste main.js
 			presets: ['env']
 		}))
-		// .pipe(modernizr()) // activate if needed
 		.pipe(uglify())										// 2s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 130-180ms avec juste main.js
 		.pipe(concat('main.js'))							// 100ms
 		.pipe(sourcemaps.write('.'))
