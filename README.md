@@ -135,6 +135,10 @@ misc
 - multi linguisme									☐
 - Autorisation crawler dossier images
 	pour moteurs de recherche						☐
+- utiliser pug data pour passer les vars globales	☐
+	en json
+-- https://www.npmjs.com/package/gulp-data
+-- opts.locals (Object): Locals to compile the Pug with. You can also provide locals through the data field of the file object, e.g. with gulp-data. They will be merged with opts.locals.
 
 dev Env
 - linters											☐
