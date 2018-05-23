@@ -50,13 +50,15 @@ js													> src/scripts
 
 - html
 -- html 5 boilerplate								/ https://html5boilerplate.com/
--- pugss (ex jade)									/ https://pugjs.org/
+-- pugjs (ex jade)									/ https://pugjs.org/
 
 - css
 -- normalize										/ https://www.npmjs.com/package/node-normalize-scss
 -- sass												/ http://sass-lang.com/
 --- bourbon											/ http://bourbon.io/
 ---- neat											/ http://neat.bourbon.io/
+
+nope
 ---- bitters										/ http://bitters.bourbon.io/
 ---- refills										/ http://refills.bourbon.io/
 
@@ -82,7 +84,6 @@ js													> src/scripts
 folder / files / misc
 - editor config										/ http://editorconfig.org/
 - git attributes 									/ https://git-scm.com/docs/gitattributes
-- modernizr											/ https://modernizr.com/
 
 git horsesh*t
 - https://stackoverflow.com/questions/11451535/gitignore-is-not-working
