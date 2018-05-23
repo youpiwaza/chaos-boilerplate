@@ -5,10 +5,10 @@ const 	browserSync 			= require('browser-sync').create(),
 		prefix 					= require('gulp-autoprefixer'),
 		babel 					= require('gulp-babel'),
 		cache 					= require('gulp-cached'),
+		cleanCss 				= require('gulp-clean-css'),
 		concat  				= require('gulp-concat'),
 		imagemin 				= require('gulp-imagemin');
 		jquery 					= require('gulp-jquery'),
-		minifycss 				= require('gulp-minify-css'),
 		notify 					= require('gulp-notify'),
 		plumber					= require('gulp-plumber'),
 		pug 					= require('gulp-pug'),
@@ -248,9 +248,14 @@ gulp.task('sass', function (){
 		.pipe(prefix(
 			'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'
 		))
-		// Un compressed css version for debug purposes
+		// Uncompressed css version for debug purposes
 		.pipe(gulp.dest(paths.styles.destDev))
-		.pipe(minifycss())
+		
+		// Minify w. sourcemaps
+		.pipe(sourcemaps.init())
+		.pipe(cleanCss())
+		.pipe(sourcemaps.write())
+
 		// Finally put the compiled sass into a css file
 		.pipe(gulp.dest(paths.styles.dest))
 
