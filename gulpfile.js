@@ -136,36 +136,7 @@ gulp.task('copy-assets', function() {
 		.pipe(gulp.dest(paths.assets.dest));
 });
 
-/*
-/// Pugjs html templates compilation
-gulp.task('html', function(){
-	return gulp.src(paths.pug.src)
 
-		// prevent watch crash on error
-		.pipe(plumber({
-			errorHandler: function(err) {
-				notify.onError({
-					title: "Gulp error in " + err.plugin,
-					// message:  err.toString()
-					message:  err.message
-				})(err);
-			},
-			handleError: function (err) {
-				console.log(err);
-				this.emit('end');
-			}
-		}))
-
-		// caching to fasten watch
-		.pipe(cache('htmling'))
-
-		.pipe(pug())
-		.pipe(gulp.dest(paths.pug.dest))
-
-		// Call browser reload
-		.pipe(browserSync.stream());
-});
-*/
 
 gulp.task('html', function(){
 	return gulp.src(paths.pug.src)
@@ -186,7 +157,7 @@ gulp.task('html', function(){
 		}))
 
 		//find files that depend on the files that have changed
-		.pipe(pugInheritance({basedir: 'src/' }))
+		.pipe(pugInheritance({basedir: 'src/', skip: 'node_modules'}))
 
 		//filter out partials (folders and files starting with "_" )
 		.pipe(filter(function (file) {
@@ -202,6 +173,7 @@ gulp.task('html', function(){
 		// Call browser reload
 		.pipe(browserSync.stream());
 });
+
 
 
 // Image minification
@@ -253,6 +225,7 @@ gulp.task('js', function () {
 
 
 });
+
 
 
 // Sass compilation
@@ -309,6 +282,7 @@ gulp.task('sass', function (){
 		// Call browser reload
 		.pipe(browserSync.stream());
 });
+
 
 
 // Dedicated watch functions to allow independant re-compile & force browser reload
