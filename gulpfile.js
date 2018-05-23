@@ -99,7 +99,10 @@ const paths = {
 	watch: {
 		scripts: 			'src/scripts/**/*.js',
 		styles: 			'src/styles/**/*.scss',
-		templates: 			'src/**/*.pug'
+		templates: 			[
+								'src/templates/*.pug',
+								'src/*.pug'
+							]
 	}
 }
 
