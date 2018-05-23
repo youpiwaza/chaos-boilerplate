@@ -8,7 +8,6 @@ const 	browserSync 			= require('browser-sync').create(),
 		cleanCss 				= require('gulp-clean-css'),
 		concat  				= require('gulp-concat'),
 		imagemin 				= require('gulp-imagemin');
-		jquery 					= require('gulp-jquery'),
 		notify 					= require('gulp-notify'),
 		plumber					= require('gulp-plumber'),
 		pug 					= require('gulp-pug'),
@@ -68,7 +67,7 @@ const paths = {
 							dest: 	'./build/scripts',
 							// No basic npm jquery stuff, need to hard copy last version // huehue
 							src: [	
-								'./node_modules/jquery-custom/jquery.2/dist/jquery.min.js',
+								'./src/scripts/libs/jquery-3.3.1.min.js',
 
 								// Css async loading
 								// https://www.npmjs.com/package/fg-loadcss?notice=MIvGLZ2qXNAEF8AM1kvyFWL8p-1MwaU7UpJd8jcG
@@ -76,7 +75,9 @@ const paths = {
 								// './node_modules/fg-loadcss/src/onloadCSS.js', // loadCSS events, allw console.log check
 								// './node_modules/fg-loadcss/src/cssrelpreload.js', // loadCSS rel=preload polyfill script
 
-								'./src/scripts/**/*.js',
+								// './src/scripts/**/*.js',
+								'./src/scripts/main.js',
+
 								'./src/assets/hyphenopoly/Hyphenopoly_Loader.js' // needs to be loaded after main script, as it defines a needed var
 							]
 	},
@@ -189,14 +190,14 @@ gulp.task('js', function () {
 
 	// OU ALORS Babeliser/uglify seulement ce dont on a besoin, puis concat avec les libs externes déjà minifiées *-*
 	
-	// return gulp.src(paths.scripts.src)
-	return gulp.src('src/scripts/main.js')
+	return gulp.src(paths.scripts.src)
+	// return gulp.src('src/scripts/main.js')
 		.pipe(sourcemaps.init())							// 100ms
 		/// Manage ES6 via babel
-		.pipe(babel({										// 2.5s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 400-500ms avec juste main.js
-			presets: ['env']
-		}))
-		.pipe(uglify())										// 2s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 130-180ms avec juste main.js
+		// .pipe(babel({									// 2.5s ? // Lié au fait qu'on envoie un dossier js, et non une liste de fichiers // 400-500ms avec juste main.js
+		// 	presets: ['env']
+		// }))
+		// .pipe(uglify())									// 2s ? // Lié au fait qu'on envoie une liste de fichiers // 130-180ms avec juste main.js
 		.pipe(concat('main.js'))							// 100ms
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.scripts.dest))
