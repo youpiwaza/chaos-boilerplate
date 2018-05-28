@@ -10,6 +10,16 @@ $color-fifth:   				#3b3a36;
 $color-sixth:   				rgb(20, 204, 174);
 $color-error:    				#d33;
 
+//// Declinaison
+$color-primary-darken:			darken($color-primary, 10%);
+$color-primary-lighter:			lighten($color-primary, 10%);
+
+//// Retours utilisateurs
+$color-user-alert:				#ff4032;
+$color-user-info:				#1c80bb;
+$color-user-neutral:			#7c8a8a;
+$color-user-ok:					#38b64b;
+$color-user-warning:			#ff9f35;
 
 
 /// Fonts
