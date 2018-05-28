@@ -41,6 +41,8 @@ $( document ).ready(function() {
 	//// Menus behavior
 	/// Menu top
 	$('.menu-item').click(onMenuItemClick);
+	$('.menu-subitem').click(onMenuSubitemClick);
+	$('.back').click(onBackClick);
 
 });
 
@@ -114,4 +116,30 @@ function closeMenu() {
 
 		menuOpen = false;
 	}
+}
+
+
+function onMenuSubitemClick ( event ) {
+
+	var id = event.currentTarget.id;
+	console.log(id);
+
+	// hide submenu-items
+	$('.left').fadeOut();
+
+	/// display linked submenu content
+	// Open menu
+	$('.menu-subcontents').slideDown();
+
+	// Close all contents
+	$('.menu-subcontent').hide();
+
+	// display it's content
+	$('.' + id).show();
+
+}
+
+function onBackClick ( event ) {
+	$('.menu-subcontents').slideUp();
+	$('.left').fadeIn();
 }

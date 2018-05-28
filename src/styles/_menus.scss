@@ -53,7 +53,7 @@ body {
 	}
 }
 
-// menu top
+//// menu top
 .top {
 	background-color: #fff;
 	border-bottom: 5px solid #e1e1e1;
@@ -73,35 +73,42 @@ body {
 }
 
 
-// menu left
+
+//// menu left
 .left {
-	/* Mobile, default, left menu is closed */
-	display: none;
-	height: 100%;
-	width: 100px;
+	width: 100%;
+
+	&:first-child {
+		border-top: 1px solid $color-primary-darken;
+	}
 	
-	ul {
-		position: absolute;
-		top: 50%;
-	}
-	li {
-		margin-left: 1em;
-	}
-}
+	.label {
+		align-items: center;
+		border-bottom: 1px solid $color-primary-darken;
+		color: $color-primary;
+		display: grid;
+		font-weight: bold;
+		grid-template-columns: 1fr 2fr;
+		padding: 1rem;
 
+		&:hover {
+			background-color: $color-primary;
+			cursor: pointer;
+			color: #fff;
 
-.notif-number {
-	background-color: $color-user-info;
-	border-radius: 50%;
-	bottom: 2px;
-	color: #fff;
-	line-height: 20px;
-	height: 20px;
-	position: absolute;
-	right: -10px;
-	text-align: center;
-	vertical-align: middle;
-	width: 20px;
+			& i {
+				color: #fff;
+			}
+		}
+	}
+	.text {
+		text-align: left; 
+	}
+
+	#menu-export a {
+		border-bottom: none;
+		padding: 0;
+	}
 }
 
 
@@ -123,6 +130,11 @@ body {
 	text-align: center;
 }
 
+.menu-subcontents {
+	display: none;
+}
+
+
 
 /// Profile
 .menu-profile {
@@ -142,7 +154,34 @@ body {
 }
 
 
+
+/// Favoris
+.id {
+	margin-bottom: 5px;
+}
+.adress {
+	color: #1e1e1e;
+	font-weight: normal !important;	
+}
+
+
+
 /// Notifications
+.notif-number {
+	background-color: $color-user-info;
+	border-radius: 50%;
+	bottom: 2px;
+	color: #fff;
+	line-height: 20px;
+	height: 20px;
+	position: absolute;
+	right: -10px;
+	text-align: center;
+	vertical-align: middle;
+	width: 20px;
+}
+
+
 .notification .fas {
 	background-color: #fff;
 	border-radius: 50%;
@@ -158,6 +197,7 @@ body {
 }
 
 .notification {
+	align-items: center;
 	display: grid;
 	grid-template-columns: 1fr 4fr;
 	padding: 1rem;
