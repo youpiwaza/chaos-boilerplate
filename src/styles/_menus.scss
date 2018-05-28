@@ -1,9 +1,14 @@
 //// Menu stylesheet
 .menus {
+	
+	.content {
+		display: none;
+	}
+
 	.left, .top {
 		position: fixed;
 		text-align: right;
-	} 
+	}
 }
 
 // menu top
