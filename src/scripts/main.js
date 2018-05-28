@@ -55,17 +55,17 @@ function onMenuItemClick ( event ) {
 
 			if(!menuOpen) {
 				// Open menu
-				$('.contents').slideDown();
+				$('.menu-contents').slideDown();
 			
 				// Close all contents
-				$('.content').hide();
+				$('.menu-content').hide();
 
 				// display it's content
 				$('.' + id).show();
 			}
 			else {
 				// Close all contents
-				$('.content').fadeOut();
+				$('.menu-content').fadeOut();
 
 				// display it's content
 				$('.' + id).fadeIn();
@@ -110,7 +110,7 @@ function onMenuItemClick ( event ) {
 function closeMenu() {
 	if(menuOpen != false) {
 		// Close menu
-		$('.contents').slideUp();
+		$('.menu-contents').slideUp();
 
 		menuOpen = false;
 	}

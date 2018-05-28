@@ -28,7 +28,7 @@
 }
 body {
 	// background-color: $color-primary; // inline in templates/_html-header.pug in order to prevent bg color flash
-	color: $color-sixth;
+	color: rgb(30,30,30);
 	font-family: $fontText, sans-serif;
 	font-size: 1rem;
 	hyphens: auto;
@@ -74,19 +74,19 @@ h6 {
 
 // links
 a {
-	color: $color-third;
+	color: $color-primary;
 
 	&:visited {
-		color: darken($color-third, 10%);
+		color: $color-primary;
 	}
 
 	&:active,
 	&:hover {
-		color: $color-fourth;
+		color: $color-primary-lighten;
 	}
 
 	&.active {
-		color: $color-fourth;
+		color: $color-primary-lighten;
 	}
 }
 

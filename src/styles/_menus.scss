@@ -6,7 +6,16 @@ body {
 
 .menus {
 	
+	a {
+		border-bottom: 1px solid $color-primary-darken;
+		display: block;
+		font-weight: bold;
+		padding: 1rem;
+		text-decoration: none;
+		width: 100%;
+	}
 	i {
+		color: $color-primary;
 		font-size: 2rem;
 
 		&:hover {
@@ -18,6 +27,20 @@ body {
 	ul {
 		list-style-type: none;
 		padding-left: 0;
+	}
+
+	
+	li {
+		&:first-child {
+			border-top: 1px solid $color-primary-darken;
+		}
+		&:hover {
+			background-color: $color-primary;
+
+			& a {
+				color: #fff;
+			}
+		}
 	}
 
 	.label {
@@ -82,20 +105,66 @@ body {
 }
 
 
-.contents {
+.menu-contents {
 	background-color: rgba(255,255,255,.9);
 	display: none;
 	height: calc(100% - 60px);
 	top: 60px;
-	padding: 1rem;
+	padding: 1rem 0;
 	position: fixed;
 	overflow: auto;
 	width: 100%;
 }
 
-.content {
+.menu-content {
 	display: none;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 }
 
+
+/// Profile
+.menu-profile {
+}
+.avatar {
+	border-radius: 50%;
+	border: 4px solid $color-primary;
+	height: 100px;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	overflow: hidden;
+	width: 100px;
+}
+
+.name {
+	margin-bottom: 1rem;
+}
+
+
+/// Notifications
+.notification .fas {
+	background-color: #fff;
+	border-radius: 50%;
+}
+.fa-check-circle {
+	color: $color-user-ok !important;
+}
+.fa-info-circle {
+	color: $color-user-info !important;
+}
+.fa-exclamation-circle {
+	color: $color-user-alert !important;
+}
+
+.notification {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	padding: 1rem;
+
+	.text {
+		text-align: left;
+	}
+}
 
 // shame
