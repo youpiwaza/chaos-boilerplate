@@ -38,8 +38,36 @@ $( document ).ready(function() {
 		}
 	}; 
 
+	//// Menus behavior
+	/// Menu top
+	$('.menu-item').click(onMenuItemClick);
+
 }); 
 
-// test babel 
-// let a = 42;
-// console.log(a); //40
+function onMenuItemClick ( event ) {
+	var id = event.currentTarget.id;
+
+	switch(id){
+		
+		case "menu-burger" :
+			console.log("menu-burger");
+			break;
+		
+		case "menu-fav" :
+			console.log("menu-fav");
+			break;
+
+		case "menu-home" :
+			console.log("menu-home");
+			break;
+
+		case "menu-notif" :
+			console.log("menu-notif");
+			break;
+
+		case "menu-profile" :
+			console.log("menu-profile");
+			break;
+
+	}
+}

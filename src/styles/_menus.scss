@@ -1,28 +1,41 @@
 //// Menu stylesheet
 .menus {
 	
+	i {
+		font-size: 2rem;
+
+		&:hover {
+			cursor: pointer;
+			color: $color-primary-darken;
+		}
+	}
+
 	.content {
 		display: none;
 	}
-
+	.label {
+		padding-bottom: .75rem;
+		padding-top: .75rem;
+		position: relative;
+	}
 	.left, .top {
 		position: fixed;
-		text-align: right;
 	}
 }
 
 // menu top
 .top {
-	height: 100px;
+	background-color: #fff;
+	border-bottom: 5px solid #e1e1e1;
+	display: flex;
+	justify-content: space-around;
 	width: 100%;
-
-	li {
-		display: inline;
-		margin-right: 1em;
-	}
 
 	.logo {
 		/* Mobile, default, No logo */
+		display: none;
+	}
+	.text {
 		display: none;
 	}
 }
@@ -43,4 +56,19 @@
 		list-style-type: none;
 		margin-left: 1em;
 	}
+}
+
+
+.notif-number {
+	background-color: $color-user-info;
+	border-radius: 50%;
+	bottom: 2px;
+	color: #fff;
+	line-height: 20px;
+	height: 20px;
+	position: absolute;
+	right: -10px;
+	text-align: center;
+	vertical-align: middle;
+	width: 20px;
 }
