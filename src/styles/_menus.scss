@@ -15,11 +15,18 @@
 		display: inline;
 		margin-right: 1em;
 	}
+
+	.logo {
+		/* Mobile, default, No logo */
+		display: none;
+	}
 }
 
 
 // menu left
 .left {
+	/* Mobile, default, left menu is closed */
+	display: none;
 	height: 100%;
 	width: 100px;
 	
