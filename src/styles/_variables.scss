@@ -24,3 +24,11 @@ $containerMaxWidth:				100em; // ~1600px
 $responsiveBreakpointSmall:		40em; // ~750px
 $responsiveBreakpoint:			60em; // ~1000px
 $responsiveBreakpointLarge:		80em; // ~1300px
+
+
+// breakpoints reponsive
+$breakpoints: (
+  'tablet':  	( min-width:  	768px ),
+  'laptop': 	( min-width:  	1024px ),
+  'desktop':  	( min-width: 	1440px )
+) !default;
