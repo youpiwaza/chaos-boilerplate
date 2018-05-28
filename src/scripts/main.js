@@ -42,13 +42,45 @@ $( document ).ready(function() {
 	/// Menu top
 	$('.menu-item').click(onMenuItemClick);
 
-}); 
+});
 
+
+var menuOpen = false;
 function onMenuItemClick ( event ) {
+	// get menu-item id
 	var id = event.currentTarget.id;
 
+	if(id != 'menu-home')
+		if(menuOpen != id) {
+
+			if(!menuOpen) {
+				// Open menu
+				$('.contents').slideDown();
+			
+				// Close all contents
+				$('.content').hide();
+
+				// display it's content
+				$('.' + id).show();
+			}
+			else {
+				// Close all contents
+				$('.content').fadeOut();
+
+				// display it's content
+				$('.' + id).fadeIn();
+			}
+
+			menuOpen = id;
+		}
+		else {
+			closeMenu();
+		}
+
+
+	// Special behavior
 	switch(id){
-		
+
 		case "menu-burger" :
 			console.log("menu-burger");
 			break;
@@ -59,6 +91,9 @@ function onMenuItemClick ( event ) {
 
 		case "menu-home" :
 			console.log("menu-home");
+			
+			closeMenu();
+			
 			break;
 
 		case "menu-notif" :
@@ -69,5 +104,14 @@ function onMenuItemClick ( event ) {
 			console.log("menu-profile");
 			break;
 
+	}
+}
+
+function closeMenu() {
+	if(menuOpen != false) {
+		// Close menu
+		$('.contents').slideUp();
+
+		menuOpen = false;
 	}
 }

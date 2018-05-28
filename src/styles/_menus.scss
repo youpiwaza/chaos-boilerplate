@@ -1,4 +1,9 @@
 //// Menu stylesheet
+body {
+	// Menu top, content margin
+	padding-top: 60px;
+}
+
 .menus {
 	
 	i {
@@ -10,9 +15,11 @@
 		}
 	}
 
-	.content {
-		display: none;
+	ul {
+		list-style-type: none;
+		padding-left: 0;
 	}
+
 	.label {
 		padding-bottom: .75rem;
 		padding-top: .75rem;
@@ -28,7 +35,9 @@
 	background-color: #fff;
 	border-bottom: 5px solid #e1e1e1;
 	display: flex;
+	height: 60px;
 	justify-content: space-around;
+	top: 0;
 	width: 100%;
 
 	.logo {
@@ -53,7 +62,6 @@
 		top: 50%;
 	}
 	li {
-		list-style-type: none;
 		margin-left: 1em;
 	}
 }
@@ -72,3 +80,22 @@
 	vertical-align: middle;
 	width: 20px;
 }
+
+
+.contents {
+	background-color: rgba(255,255,255,.9);
+	display: none;
+	height: calc(100% - 60px);
+	top: 60px;
+	padding: 1rem;
+	position: fixed;
+	overflow: auto;
+	width: 100%;
+}
+
+.content {
+	display: none;
+}
+
+
+// shame
