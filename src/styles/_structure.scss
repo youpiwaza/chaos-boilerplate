@@ -27,9 +27,10 @@
 	box-sizing: border-box;
 }
 body {
-	// background-color: $color-primary; // inline in templates/_html-header.pug in order to rpevent bg color flash
+	// background-color: $color-primary; // inline in templates/_html-header.pug in order to prevent bg color flash
 	color: $color-sixth;
 	font-family: $fontText, sans-serif;
+	font-size: 1rem;
 	hyphens: auto;
 }
 
@@ -38,14 +39,38 @@ h1, h2, h3, h4, h5, h6 {
 	color: $color-sixth;
 	font-family: $fontTitle, serif;
 	letter-spacing: .1em;
-	text-shadow: 1px 2px $color-secondary;
+	text-shadow: 1px 2px rgba(0,0,0,.2);
 }
 
-@for $i from 1 through 6 {
-	h#{$i} {
-		font-size: 4em - $i * .4;
-	}
+// @for $i from 1 through 6 {
+// 	h#{$i} {
+// 		font-size: 4.4em - $i * .4;
+// 	}
+// }
+
+h1 {
+	font-size: 3rem;
 }
+	h1.principal {
+		font-size: 4.4rem;
+	}
+h2 {
+	font-size: 2.25rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: 1.3rem;
+}
+h5 {
+	font-size: 1.12rem;
+}
+h6 {
+	font-size: 1rem;
+}
+
+
 
 // links
 a {

@@ -1,8 +1,8 @@
 //// Fonts imports related stylesheet
 
 /// Includes
-@include font-face($fontTitle, $fontsPath + '/' + $fontTitle + '/' + $fontTitle + '-BoldItalic', $exts: 'ttf');
+@include font-face($fontTitle, $fontsPath + '/' + $fontTitle + '/' + $fontTitle + '-Bold', $exts: 'ttf');
 
-@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Light', $exts: 'ttf');
-@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-LightItalic', null, italic, $exts: 'ttf');
-@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Medium', bold, $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Regular', $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Italic', null, italic, $exts: 'ttf');
+@include font-face($fontText, $fontsPath + '/' + $fontText + '/' + $fontText + '-Bold', bold, $exts: 'ttf');
